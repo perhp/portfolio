@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Link from "next/link";
 import DefaultLayout from "../components/layout/default";
 
 const Home: NextPage = () => {
@@ -42,7 +41,12 @@ const Home: NextPage = () => {
             <span className="leading-4 tracking-wide">Consultant</span>
             <div className="absolute w-full h-full transition-all border-2 border-blue-50 -right-1 -bottom-1 group-hover:border-blue-100 group-hover:bottom-0 group-hover:right-0"></div>
           </a>
-          <a className="relative flex flex-col w-full p-5 text-purple-900 transition-colors cursor-pointer bg-purple-50 hover:bg-purple-100 group">
+          <a
+            href="https://additives-scanner.com"
+            target="_blank"
+            rel="noreferrer"
+            className="relative flex flex-col w-full p-5 text-purple-900 transition-colors cursor-pointer bg-purple-50 hover:bg-purple-100 group"
+          >
             <span className="mb-2 text-lg font-bold leading-4">
               Additives Scanner
             </span>
