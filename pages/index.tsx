@@ -14,9 +14,9 @@ const Home: NextPage = () => {
             <div className="absolute z-10 w-4/5 h-8 bg-blue-100 -left-2 -bottom-1"></div>
           </h1>
           <p className="mt-10 text-xl">
-            I'm a frontend developer and full-stack wannabe. I enjoy developing
-            anything web, Arduino, Unity and really any technology i find
-            interesting.
+            I&apos;m a frontend developer and full-stack wannabe. I enjoy
+            developing anything web, Arduino, Unity and really any technology i
+            find interesting.
           </p>
         </div>
         <div className="flex flex-col w-1/3 gap-3">
