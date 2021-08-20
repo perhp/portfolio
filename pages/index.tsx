@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           >
             <span className="mb-2 text-lg font-bold leading-4">eManager</span>
             <span className="leading-4 tracking-wide">CTO</span>
-            <div className="absolute w-full h-full transition-all border-2 border-green-50 -right-1 -bottom-1 group-hover:border-green-100 group-hover:bottom-0 group-hover:right-0"></div>
+            <div className="absolute w-full h-full transition-all border-2 pointer-events-none border-green-50 -right-1 -bottom-1 group-hover:border-green-100 group-hover:bottom-0 group-hover:right-0"></div>
           </a>
           <a
             href="https://storebuddy.dk"
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           >
             <span className="mb-2 text-lg font-bold leading-4">Storebuddy</span>
             <span className="leading-4 tracking-wide">Consultant</span>
-            <div className="absolute w-full h-full transition-all border-2 border-blue-50 -right-1 -bottom-1 group-hover:border-blue-100 group-hover:bottom-0 group-hover:right-0"></div>
+            <div className="absolute w-full h-full transition-all border-2 pointer-events-none border-blue-50 -right-1 -bottom-1 group-hover:border-blue-100 group-hover:bottom-0 group-hover:right-0"></div>
           </a>
           <a
             href="https://additives-scanner.com"
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
               Additives Scanner
             </span>
             <span className="leading-4 tracking-wide">Personal Project</span>
-            <div className="absolute w-full h-full transition-all border-2 border-purple-50 -right-1 -bottom-1 group-hover:border-purple-100 group-hover:bottom-0 group-hover:right-0"></div>
+            <div className="absolute w-full h-full transition-all border-2 pointer-events-none border-purple-50 -right-1 -bottom-1 group-hover:border-purple-100 group-hover:bottom-0 group-hover:right-0"></div>
           </a>
         </div>
       </div>
