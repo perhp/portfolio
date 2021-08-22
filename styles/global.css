@@ -3,4 +3,5 @@
 body {
   @apply text-gray-800 bg-gray-50;
   font-family: "Inter", sans-serif;
+  overflow-y: scroll;
 }
