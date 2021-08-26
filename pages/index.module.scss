@@ -1,0 +1,34 @@
+@keyframes signature {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+$animationDuration: 0.75s;
+
+.signature_1 {
+  stroke-dasharray: 209.66062927246094;
+  stroke-dashoffset: 209.66062927246094;
+  animation: signature $animationDuration / 2 ease-in forwards;
+}
+
+.signature_2 {
+  stroke-dasharray: 524.4884033203125;
+  stroke-dashoffset: 524.4884033203125;
+  animation: signature $animationDuration ease-in-out forwards;
+  animation-delay: ($animationDuration / 2) * 2;
+}
+
+.signature_3 {
+  stroke-dasharray: 1771.633056640625;
+  stroke-dashoffset: 1771.633056640625;
+  animation: signature $animationDuration ease-in-out forwards;
+  animation-delay: ($animationDuration / 1.5) * 3;
+}
+
+.signature_4 {
+  stroke-dasharray: 497.0262145996094;
+  stroke-dashoffset: 497.0262145996094;
+  animation: signature $animationDuration / 1.5 ease-in-out forwards;
+  animation-delay: $animationDuration / 2;
+}
