@@ -1,6 +1,6 @@
-import { ReactChild } from "react";
-import Link from "next/link";
-import { useRouter } from "next/dist/client/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { ReactChild } from 'react';
 
 function DefaultLayout({ children }: { children: ReactChild }) {
   const router = useRouter();
@@ -27,6 +27,7 @@ function DefaultLayout({ children }: { children: ReactChild }) {
               home.
             </a>
           </Link>
+          {/* 
           <Link href="/projects">
             <a
               className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-yellow-500 ${
@@ -45,6 +46,7 @@ function DefaultLayout({ children }: { children: ReactChild }) {
               contact.
             </a>
           </Link>
+          */}
         </nav>
       </header>
       <main className="flex flex-grow sm:px-10 md:px-16 lg:px-28 md:pt-0">

@@ -1,10 +1,10 @@
 import type { AppProps } from "next/app";
-import { useRouter } from "next/dist/client/router";
-import { useEffect } from "react";
-import * as Fathom from "fathom-client";
+import 'tailwindcss/tailwind.css';
+import '../styles/globals.css';
 
-import "tailwindcss/tailwind.css";
-import "../styles/globals.css";
+import * as Fathom from 'fathom-client';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
