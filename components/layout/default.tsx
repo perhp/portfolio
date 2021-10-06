@@ -27,6 +27,14 @@ function DefaultLayout({ children }: { children: ReactChild }) {
               home.
             </a>
           </Link>
+          <a
+            href="https://playground.perhp.dev"
+            target="_blank"
+            rel="noreferrer"
+            className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-yellow-500`}
+          >
+            playground.
+          </a>
           {/* 
           <Link href="/projects">
             <a
