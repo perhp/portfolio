@@ -35,26 +35,6 @@ function DefaultLayout({ children }: { children: ReactChild }) {
           >
             playground.
           </a>
-          {/* 
-          <Link href="/projects">
-            <a
-              className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-yellow-500 ${
-                router.pathname === "/projects" && "text-yellow-500"
-              }`}
-            >
-              projects.
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a
-              className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-green-500 ${
-                router.pathname === "/contact" && "text-green-500"
-              }`}
-            >
-              contact.
-            </a>
-          </Link>
-          */}
         </nav>
       </header>
       <main className="flex flex-grow sm:px-10 md:px-16 lg:px-28 md:pt-0">
