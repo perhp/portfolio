@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { ReactChild } from 'react';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { ReactChild } from "react";
 
 function DefaultLayout({ children }: { children: ReactChild }) {
   const router = useRouter();
@@ -28,7 +28,7 @@ function DefaultLayout({ children }: { children: ReactChild }) {
             </a>
           </Link>
           <a
-            href="https://playground.perhp.dev"
+            href="https://playground.perhp.com"
             target="_blank"
             rel="noreferrer"
             className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-yellow-500`}

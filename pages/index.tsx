@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
-import Head from 'next/head';
-
-import DefaultLayout from '../components/layout/default';
-import styles from './index.module.scss';
+import Head from "next/head";
+import DefaultLayout from "../components/layout/default";
+import styles from "./index.module.scss";
 
 const Home: NextPage = () => {
   return (
@@ -26,8 +25,8 @@ const Home: NextPage = () => {
             </p>
             <p className="mt-2 sm:text-xl">
               Business inquiries at{" "}
-              <a href="mailto:hello@perhp.dev" target="_blank" rel="noreferrer" className="relative inline-block group">
-                <span className="relative z-20 font-medium">hello@perhp.dev</span>
+              <a href="mailto:hello@perhp.com" target="_blank" rel="noreferrer" className="relative inline-block group">
+                <span className="relative z-20 font-medium">hello@perhp.com</span>
                 <div className="absolute bottom-0 z-10 h-2 transition-all bg-blue-100 sm:h-3 -left-1 -right-1 group-hover:h-7"></div>
               </a>
             </p>
