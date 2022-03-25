@@ -38,7 +38,7 @@ function DefaultLayout({ children }: { children: ReactChild }) {
         </nav>
       </header>
       <main className="flex flex-grow sm:px-10 md:px-16 lg:px-28 md:pt-0">
-        <div className="flex flex-grow bg-white">{children}</div>
+        <div className="flex flex-col flex-grow bg-white">{children}</div>
       </main>
       <footer className="flex items-center px-10 py-8 bg-blue-50 lg:px-28 sm:mx-10 md:mx-16 lg:mx-28">
         <div className="flex flex-col">

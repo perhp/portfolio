@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @keyframes signature {
   to {
     stroke-dashoffset: 0;
@@ -9,26 +11,46 @@ $animationDuration: 0.75s;
 .signature_1 {
   stroke-dasharray: 209.66062927246094;
   stroke-dashoffset: 209.66062927246094;
-  animation: signature $animationDuration / 2 ease-in forwards;
+  animation: signature math.div($animationDuration, 2) ease-in forwards;
 }
 
 .signature_2 {
   stroke-dasharray: 524.4884033203125;
   stroke-dashoffset: 524.4884033203125;
   animation: signature $animationDuration ease-in-out forwards;
-  animation-delay: ($animationDuration / 2) * 2;
+  animation-delay: (math.div($animationDuration, 2)) * 2;
 }
 
 .signature_3 {
   stroke-dasharray: 1771.633056640625;
   stroke-dashoffset: 1771.633056640625;
   animation: signature $animationDuration ease-in-out forwards;
-  animation-delay: ($animationDuration / 1.5) * 3;
+  animation-delay: (math.div($animationDuration, 1.5)) * 3;
 }
 
 .signature_4 {
   stroke-dasharray: 497.0262145996094;
   stroke-dashoffset: 497.0262145996094;
-  animation: signature $animationDuration / 1.5 ease-in-out forwards;
-  animation-delay: $animationDuration / 2;
+  animation: signature math.div($animationDuration, 1.5) ease-in-out forwards;
+  animation-delay: math.div($animationDuration, 2);
+}
+
+@keyframes blobAnimation {
+  0% {
+    border-radius: 49% 51% 48% 52% / 57% 44% 56% 43%;
+  }
+  33.33% {
+    border-radius: 30% 70% 70% 30% / 53% 30% 70% 47%;
+  }
+  66.66% {
+    border-radius: 53% 47% 34% 66% / 63% 46% 54% 37%;
+  }
+  100% {
+    border-radius: 49% 51% 48% 52% / 57% 44% 56% 43%;
+  }
+}
+
+.blobAnimation {
+  @apply absolute max-w-xl bg-blue-100 -inset-3;
+  animation: blobAnimation 30s linear infinite;
 }
