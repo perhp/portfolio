@@ -117,7 +117,7 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="p-8 lg:px-28 lg:py-16">
+          <div className="p-8 py-20 lg:px-28 lg:py-28">
             <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
               These are the technologies I&apos;m most familiar with
             </p>
