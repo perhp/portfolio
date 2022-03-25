@@ -1,3 +1,4 @@
+import { differenceInYears } from "date-fns";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -8,27 +9,27 @@ import styles from "./index.module.scss";
 const technologies = [
   {
     name: "HTML",
-    level: "7 years",
+    date: new Date(2014, 7, 1),
   },
   {
     name: "SCSS",
-    level: "7 years",
+    date: new Date(2014, 7, 1),
   },
   {
     name: "JavaScript",
-    level: "7 years",
+    date: new Date(2014, 7, 1),
   },
   {
     name: "Angular",
-    level: "5 years",
+    date: new Date(2016, 7, 1),
   },
   {
     name: "NodeJS",
-    level: "3 years",
+    date: new Date(2019, 1, 1),
   },
   {
     name: "Next.js",
-    level: "1 year",
+    date: new Date(2020, 1, 1),
   },
 ];
 
@@ -116,24 +117,22 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white">
-            <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8">
-              <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
-                These are the technologies I&apos;m most familiar with
-              </p>
-              <div className="grid grid-cols-2 gap-1 mt-6 md:grid-cols-3 lg:mt-8">
-                {technologies.map((technology, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center justify-center col-span-1 px-8 py-8 font-extrabold text-blue-900 bg-blue-50"
-                  >
-                    {technology.name}
-                    <span className="text-xs font-medium leading-3 tracking-wider text-blue-400 uppercase">
-                      {technology.level}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          <div className="p-8 lg:px-28 lg:py-16">
+            <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
+              These are the technologies I&apos;m most familiar with
+            </p>
+            <div className="grid grid-cols-2 gap-1 mt-6 md:grid-cols-3 lg:mt-8">
+              {technologies.map((technology, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center col-span-1 px-8 py-8 font-extrabold text-blue-900 bg-blue-50"
+                >
+                  {technology.name}
+                  <span className="text-xs font-medium leading-3 tracking-wider text-blue-400 uppercase">
+                    {differenceInYears(new Date(), technology.date)} years
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </>
