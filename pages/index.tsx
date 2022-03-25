@@ -100,8 +100,8 @@ const Home: NextPage = () => {
                   className={styles.signature_4}
                 />
               </svg>
-              <p className="mt-2 text-sm font-bold">Per Hansen</p>
-              <p className="text-sm">Software Developer</p>
+              <p className="mt-2 text-sm font-bold ">Per Hansen</p>
+              <p className="text-xs">Software Developer</p>
             </div>
             <div className="relative flex justify-center pt-4 2xl:w-1/2">
               <div className="relative max-w-md h-min">
@@ -125,10 +125,10 @@ const Home: NextPage = () => {
                 {technologies.map((technology, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center justify-center col-span-1 px-8 py-8 font-extrabold text-blue-800 bg-blue-50"
+                    className="flex flex-col items-center justify-center col-span-1 px-8 py-8 font-extrabold text-blue-900 bg-blue-50"
                   >
                     {technology.name}
-                    <span className="text-xs font-medium leading-4 tracking-wider text-blue-300 uppercase">
+                    <span className="text-xs font-medium leading-3 tracking-wider text-blue-400 uppercase">
                       {technology.level}
                     </span>
                   </div>
