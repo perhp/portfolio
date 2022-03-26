@@ -51,8 +51,9 @@ const Home: NextPage = () => {
                 <div className="absolute z-10 hidden w-4/5 h-8 bg-blue-100 lg:block -left-2 -bottom-1"></div>
               </h1>
               <p className="mt-6 xl:mt-10 sm:text-xl">
-                I&apos;m a frontend developer and full-stack wannabe. I enjoy developing anything web and occasionally
-                experiment with Arduino, Unity or really any technology i find interesting.
+                I&apos;m a frontend developer and full-stack wannabe. I enjoy
+                developing anything web and occasionally experiment with
+                Arduino, Unity or really any technology i find interesting.
               </p>
               <p className="mt-2 sm:text-xl">
                 Business inquiries at{" "}
@@ -62,8 +63,10 @@ const Home: NextPage = () => {
                   rel="noreferrer"
                   className="relative inline-block group"
                 >
-                  <span className="relative z-20 font-medium">hello@perhp.com</span>
-                  <div className="absolute bottom-0 z-10 h-2 transition-all bg-blue-100 sm:h-3 -left-1 -right-1 group-hover:h-7"></div>
+                  <span className="relative z-20 font-medium">
+                    hello@perhp.com
+                  </span>
+                  <span className="absolute bottom-0 z-10 block h-2 transition-all bg-blue-100 sm:h-3 -left-1 -right-1 group-hover:h-7"></span>
                 </a>
               </p>
               <svg
