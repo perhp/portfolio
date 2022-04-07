@@ -10,7 +10,7 @@ function DefaultLayout({ children }: { children: ReactChild }) {
       <header className="flex">
         <Link href="/">
           <a
-            className="relative flex items-center justify-center w-16 h-16 text-2xl font-extrabold text-white bg-gray-800 md:w-20 md:h-20 md:text-4xl lg:h-28 lg:w-28 group sm:ml-10 md:ml-16 lg:ml-0"
+            className="relative flex items-center justify-center w-20 h-20 text-2xl font-extrabold text-white bg-gray-800 md:text-4xl lg:h-28 lg:w-28 group sm:ml-10 md:ml-16 lg:ml-0"
             style={{ fontFamily: '"Pacifico", cursive' }}
           >
             ph
@@ -27,14 +27,15 @@ function DefaultLayout({ children }: { children: ReactChild }) {
               home.
             </a>
           </Link>
-          <a
-            href="https://playground.perhp.com"
-            target="_blank"
-            rel="noreferrer"
-            className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-yellow-500`}
-          >
-            playground.
-          </a>
+          <Link href="/projects">
+            <a
+              className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-emerald-500 ${
+                router.pathname === "/projects" && "text-emerald-500"
+              }`}
+            >
+              projects.
+            </a>
+          </Link>
         </nav>
       </header>
       <main className="flex flex-grow sm:px-10 md:px-16 lg:px-28 md:pt-0">
@@ -61,6 +62,14 @@ function DefaultLayout({ children }: { children: ReactChild }) {
             className="relative flex items-center h-10 font-bold transition-colors cursor-pointer hover:text-gray-500"
           >
             linkedin.
+          </a>
+          <a
+            href="https://playground.perhp.com"
+            target="_blank"
+            rel="noreferrer"
+            className="relative flex items-center h-10 font-bold transition-colors cursor-pointer hover:text-gray-500"
+          >
+            playground.
           </a>
         </div>
       </footer>
