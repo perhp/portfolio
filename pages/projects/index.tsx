@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import DefaultLayout from "../../components/layout/default";
 
 const projects = [
@@ -50,32 +51,37 @@ const projects = [
 
 const Projects: NextPage = () => {
   return (
-    <DefaultLayout>
-      <div className="p-8 py-20 lg:px-28 lg:py-28">
-        <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
-          These are the projects and companies I&apos;ve been involved with over the years.
-        </p>
-        <div className="grid grid-cols-1 gap-3 mt-6 md:grid-cols-2 xl:grid-cols-3 lg:mt-8">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="flex flex-col col-span-1 px-8 py-8 transition-all transform bg-blue-50 hover:shadow-zinc-200 hover:shadow-lg hover:-translate-y-1"
-            >
-              <p className="font-extrabold text-blue-900">{project.name}</p>
-              <p className="text-xs font-medium">{project.position}</p>
-              <p className="mt-3 font-medium leading-5 text-blue-900">{project.description}</p>
-              <div className="flex justify-between pt-5 mt-auto text-xs font-extrabold">
-                <p>{project.employmentType}</p>
-                <p>{project.yearsInPosition}</p>
-              </div>
-            </a>
-          ))}
+    <>
+      <Head>
+        <title>Per Hansen - Projects</title>
+      </Head>
+      <DefaultLayout>
+        <div className="p-8 py-20 lg:px-28 lg:py-28">
+          <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
+            These are the projects and companies I&apos;ve been involved with over the years.
+          </p>
+          <div className="grid grid-cols-1 gap-3 mt-6 md:grid-cols-2 xl:grid-cols-3 lg:mt-8">
+            {projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="flex flex-col col-span-1 px-8 py-8 transition-all transform bg-blue-50 hover:shadow-zinc-200 hover:shadow-lg hover:-translate-y-1"
+              >
+                <p className="font-extrabold text-blue-900">{project.name}</p>
+                <p className="text-xs font-medium">{project.position}</p>
+                <p className="mt-3 font-medium leading-5 text-blue-900">{project.description}</p>
+                <div className="flex justify-between pt-5 mt-auto text-xs font-extrabold">
+                  <p>{project.employmentType}</p>
+                  <p>{project.yearsInPosition}</p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </DefaultLayout>
+      </DefaultLayout>
+    </>
   );
 };
 
