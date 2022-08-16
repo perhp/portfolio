@@ -142,7 +142,7 @@ const Home: NextPage = (ctx: any) => {
           </div>
           <div className="p-8 py-20 lg:px-28 lg:py-28">
             <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
-              And these are my sleep scores the past month!
+              And these are my sleep scores the past month
             </p>
             <LineChart
               height={400}
