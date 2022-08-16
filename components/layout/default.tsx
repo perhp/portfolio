@@ -41,12 +41,12 @@ function DefaultLayout({ children }: { children: ReactChild }) {
       <main className="flex flex-grow sm:px-10 md:px-16 lg:px-28 md:pt-0">
         <div className="flex flex-col flex-grow bg-white">{children}</div>
       </main>
-      <footer className="flex items-center px-10 py-8 bg-blue-50 lg:px-28 sm:mx-10 md:mx-16 lg:mx-28">
-        <div className="flex flex-col">
+      <footer className="flex flex-col items-center px-10 py-8 sm:flex-row bg-blue-50 lg:px-28 sm:mx-10 md:mx-16 lg:mx-28">
+        <div className="flex flex-col text-center sm:text-left">
           <span className="text-sm font-bold">Pekkel</span>
           <span className="text-xs font-medium text-gray-500">DK-37106666</span>
         </div>
-        <div className="flex items-center gap-5 ml-auto text-sm font-bold">
+        <div className="flex items-center gap-5 text-sm font-bold sm:ml-auto">
           <a
             href="https://github.com/perhp"
             target="_blank"

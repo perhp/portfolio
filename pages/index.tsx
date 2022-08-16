@@ -1,8 +1,10 @@
 import { differenceInYears } from "date-fns";
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import DefaultLayout from "../components/layout/default";
+import { getOuraSleep } from "../features/oura/sleep";
 import MeImage from "../public/images/me.jpeg";
 import styles from "./index.module.scss";
 
@@ -33,7 +35,10 @@ const technologies = [
   },
 ];
 
-const Home: NextPage = () => {
+const LineChart = dynamic(() => import("../components/charts/LineChart"), { ssr: false });
+
+const Home: NextPage = (ctx: any) => {
+  console.log(ctx);
   return (
     <>
       <Head>
@@ -121,19 +126,29 @@ const Home: NextPage = () => {
             <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
               These are the technologies I&apos;m most familiar with
             </p>
-            <div className="grid grid-cols-2 gap-1 mt-6 md:grid-cols-3 lg:mt-8">
+            <div className="grid grid-cols-1 gap-1 mt-6 md:grid-cols-3 lg:mt-8">
               {technologies.map((technology, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center justify-center col-span-1 px-8 py-8 font-extrabold text-blue-900 bg-blue-50"
+                  className="flex flex-col items-center justify-center col-span-1 px-8 py-8 font-extrabold leading-4 text-center text-blue-900 bg-blue-50"
                 >
                   {technology.name}
-                  <span className="text-xs font-medium leading-3 tracking-wider text-blue-400 uppercase">
+                  <span className="mt-2 text-xs font-medium leading-3 tracking-wider text-blue-400 uppercase">
                     {differenceInYears(new Date(), technology.date)} years
                   </span>
                 </div>
               ))}
             </div>
+          </div>
+          <div className="p-8 py-20 lg:px-28 lg:py-28">
+            <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
+              And these are my sleep scores the past month!
+            </p>
+            <LineChart
+              height={400}
+              id={"1"}
+              series={[{ name: "Sleep", data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.score })) }]}
+            />
           </div>
         </>
       </DefaultLayout>
@@ -142,3 +157,15 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const ouraSleep = await getOuraSleep();
+
+  return {
+    props: {
+      oura: {
+        sleep: ouraSleep,
+      },
+    },
+  };
+}
