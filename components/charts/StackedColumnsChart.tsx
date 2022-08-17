@@ -15,12 +15,9 @@ type StackedColumnsChartProps = {
 };
 
 export default function StackedColumnsChart({ id, series, height }: StackedColumnsChartProps) {
-  const seriesData = series;
   const options: ApexOptions = {
-    series,
     chart: {
       id: `${id}-chart`,
-      height,
       stacked: true,
       toolbar: {
         show: false,
@@ -33,6 +30,7 @@ export default function StackedColumnsChart({ id, series, height }: StackedColum
       bar: {
         horizontal: false,
         borderRadius: 3,
+        rangeBarGroupRows: true,
       },
     },
     dataLabels: {
@@ -84,5 +82,5 @@ export default function StackedColumnsChart({ id, series, height }: StackedColum
     },
   };
 
-  return <ReactApexChart options={options as any} series={seriesData} height={height} type={"bar"} />;
+  return <ReactApexChart options={options} series={series} height={height} type={"bar"} />;
 }

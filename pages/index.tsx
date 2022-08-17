@@ -138,13 +138,13 @@ const Home: NextPage = ({ oura }: any) => {
               ))}
             </div>
           </div>
-          <div className="p-8 py-20 lg:px-28 lg:py-28">
+          <div className="py-20 pr-4 sm:p-8 lg:px-28 lg:py-28">
             <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
               And these are my sleep scores the past month
             </p>
-            <div className="p-5 bg-blue-50">
+            <div className="sm:p-5 sm:bg-blue-50">
               <DailySleepChart dailySleep={oura.dailySleep} />
-              <div className="h-16 bg-blue-50"></div>
+              <div className="h-16 sm:bg-blue-50"></div>
               <SleepPeriodsChart sleepPeriods={oura.sleepPeriods} />
             </div>
           </div>
