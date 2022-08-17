@@ -1,10 +1,11 @@
 import { differenceInYears } from "date-fns";
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import DefaultLayout from "../components/layout/default";
-import { getOuraSleep } from "../features/oura/sleep";
+import { getOuraDailySleep, getOuraSleepPeriods } from "../features/oura/api";
+import { DailySleepChart } from "../features/oura/DailySleepChart";
+import { SleepPeriodsChart } from "../features/oura/SleepPeriodsChart";
 import MeImage from "../public/images/me.jpeg";
 import styles from "./index.module.scss";
 
@@ -35,9 +36,7 @@ const technologies = [
   },
 ];
 
-const LineChart = dynamic(() => import("../components/charts/LineChart"), { ssr: false });
-
-const Home: NextPage = (ctx: any) => {
+const Home: NextPage = ({ oura }: any) => {
   return (
     <>
       <Head>
@@ -143,37 +142,10 @@ const Home: NextPage = (ctx: any) => {
             <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
               And these are my sleep scores the past month
             </p>
-            <div className="bg-gray-50">
-              <LineChart
-                id={"sleep"}
-                height={400}
-                series={[
-                  {
-                    name: "Overall",
-                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.score })),
-                  },
-                  {
-                    name: "REM",
-                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.rem_sleep })),
-                  },
-                  {
-                    name: "Deep Sleep",
-                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.deep_sleep })),
-                  },
-                  {
-                    name: "Restfulness",
-                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.restfulness })),
-                  },
-                  {
-                    name: "Timing",
-                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.timing })),
-                  },
-                  {
-                    name: "Latency",
-                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.latency })),
-                  },
-                ]}
-              />
+            <div className="p-5 bg-blue-50">
+              <DailySleepChart dailySleep={oura.dailySleep} />
+              <div className="h-16 bg-blue-50"></div>
+              <SleepPeriodsChart sleepPeriods={oura.sleepPeriods} />
             </div>
           </div>
         </>
@@ -185,12 +157,13 @@ const Home: NextPage = (ctx: any) => {
 export default Home;
 
 export async function getStaticProps() {
-  const ouraSleep = await getOuraSleep();
+  const [ouraDailySleep, ouraSleepPeriods] = await Promise.all([getOuraDailySleep(), getOuraSleepPeriods()]);
 
   return {
     props: {
       oura: {
-        sleep: ouraSleep,
+        dailySleep: ouraDailySleep,
+        sleepPeriods: ouraSleepPeriods,
       },
     },
     revalidate: 60 * 60,

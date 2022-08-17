@@ -1,3 +1,5 @@
+import { ApexOptions } from "apexcharts";
+import { format } from "date-fns";
 import ReactApexChart from "react-apexcharts";
 
 type LineChartProps = {
@@ -9,18 +11,18 @@ type LineChartProps = {
     }[];
   }[];
   id: string;
-  showTools?: boolean;
   height: number;
 };
 
 export default function LineChart({ id, series, height }: LineChartProps) {
   const seriesData = series;
-  const options = {
+  const options: ApexOptions = {
     chart: {
       id: `${id}-chart`,
-      type: "area",
       height: 400,
-      toolbar: false,
+      toolbar: {
+        show: false,
+      },
       stacked: false,
     },
     stroke: {
@@ -39,16 +41,20 @@ export default function LineChart({ id, series, height }: LineChartProps) {
     xaxis: {
       type: "datetime",
       labels: {
-        formatter: function (val: number) {
-          return `${new Date(val).getDate()}/${new Date(val).getMonth() + 1}`;
+        show: false,
+        formatter: function (val) {
+          return `${format(new Date(val), "eeee, dd MMMM")}`;
         },
+        rotateAlways: true,
+      },
+      tooltip: {
+        enabled: false,
       },
     },
     legend: {
-      show: true,
-      position: "right",
+      offsetY: 8,
     },
   };
 
-  return <ReactApexChart options={options as any} series={seriesData} type="area" height={height} />;
+  return <ReactApexChart options={options as any} series={seriesData} height={height} type={"area"} />;
 }
