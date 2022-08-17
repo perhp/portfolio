@@ -38,7 +38,6 @@ const technologies = [
 const LineChart = dynamic(() => import("../components/charts/LineChart"), { ssr: false });
 
 const Home: NextPage = (ctx: any) => {
-  console.log(ctx);
   return (
     <>
       <Head>
@@ -167,5 +166,6 @@ export async function getStaticProps() {
         sleep: ouraSleep,
       },
     },
+    revalidate: 60 * 60,
   };
 }
