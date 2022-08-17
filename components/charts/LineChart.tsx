@@ -13,11 +13,11 @@ type LineChartProps = {
   height: number;
 };
 
-export default function LineChart({ series, id, height }: LineChartProps) {
+export default function LineChart({ id, series, height }: LineChartProps) {
   const seriesData = series;
   const options = {
     chart: {
-      id: `${id}-chart-1`,
+      id: `${id}-chart`,
       type: "area",
       height: 400,
       toolbar: false,
@@ -50,9 +50,5 @@ export default function LineChart({ series, id, height }: LineChartProps) {
     },
   };
 
-  return (
-    <div className="pt-2 rounded-b bg-gray-50">
-      <ReactApexChart options={options as any} series={seriesData} type="area" height={height} />
-    </div>
-  );
+  return <ReactApexChart options={options as any} series={seriesData} type="area" height={height} />;
 }

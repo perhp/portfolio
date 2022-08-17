@@ -143,11 +143,38 @@ const Home: NextPage = (ctx: any) => {
             <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
               And these are my sleep scores the past month
             </p>
-            <LineChart
-              height={400}
-              id={"1"}
-              series={[{ name: "Sleep", data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.score })) }]}
-            />
+            <div className="bg-gray-50">
+              <LineChart
+                id={"sleep"}
+                height={400}
+                series={[
+                  {
+                    name: "Overall",
+                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.score })),
+                  },
+                  {
+                    name: "REM",
+                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.rem_sleep })),
+                  },
+                  {
+                    name: "Deep Sleep",
+                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.deep_sleep })),
+                  },
+                  {
+                    name: "Restfulness",
+                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.restfulness })),
+                  },
+                  {
+                    name: "Timing",
+                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.timing })),
+                  },
+                  {
+                    name: "Latency",
+                    data: ctx.oura.sleep.map((sleep: any) => ({ x: sleep.day, y: sleep.contributors.latency })),
+                  },
+                ]}
+              />
+            </div>
           </div>
         </>
       </DefaultLayout>
