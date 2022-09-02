@@ -1,42 +1,18 @@
-import { differenceInYears } from "date-fns";
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import DefaultLayout from "../components/layout/default";
 import { getOuraDailySleep, getOuraSleepPeriods } from "../features/oura/api";
 import { DailySleepChart } from "../features/oura/DailySleepChart";
 import { SleepPeriodsChart } from "../features/oura/SleepPeriodsChart";
+import { getWakatimeSummaries, WakatimeLanguageSummary } from "../features/wakatime/api";
 import MeImage from "../public/images/me.jpeg";
 import styles from "./index.module.scss";
 
-const technologies = [
-  {
-    name: "HTML",
-    date: new Date(2014, 7, 1),
-  },
-  {
-    name: "SCSS",
-    date: new Date(2014, 7, 1),
-  },
-  {
-    name: "JavaScript",
-    date: new Date(2014, 7, 1),
-  },
-  {
-    name: "Angular",
-    date: new Date(2016, 7, 1),
-  },
-  {
-    name: "React Native",
-    date: new Date(2020, 1, 1),
-  },
-  {
-    name: "Next.js",
-    date: new Date(2020, 1, 1),
-  },
-];
+const LanguagesSummariesChart = dynamic(() => import("../features/wakatime/LanguagesSummariesChart"), { ssr: false });
 
-const Home: NextPage = ({ oura }: any) => {
+const Home: NextPage = ({ oura, wakatime }: any) => {
   return (
     <>
       <Head>
@@ -122,25 +98,15 @@ const Home: NextPage = ({ oura }: any) => {
           </div>
           <div className="p-8 py-20 lg:px-28 lg:py-28">
             <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
-              These are the technologies I&apos;m most familiar with
+              This is my time in languages distribution the past two weeks
             </p>
-            <div className="grid grid-cols-1 gap-1 mt-6 md:grid-cols-3 lg:mt-8">
-              {technologies.map((technology, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center col-span-1 px-8 py-8 font-extrabold leading-4 text-center text-blue-900 bg-blue-50"
-                >
-                  {technology.name}
-                  <span className="mt-2 text-xs font-medium leading-3 tracking-wider text-blue-400 uppercase">
-                    {differenceInYears(new Date(), technology.date)} years
-                  </span>
-                </div>
-              ))}
+            <div className="pb-3 pl-5 mt-5 bg-blue-50">
+              <LanguagesSummariesChart languagesSummaries={wakatime.languagesSummaries} />
             </div>
           </div>
           <div className="py-20 pr-4 sm:p-8 lg:px-28 lg:py-28">
             <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
-              And these are my sleep scores the past month
+              These are my sleep scores the past month
             </p>
             <div className="sm:p-5 sm:bg-blue-50">
               <DailySleepChart dailySleep={oura.dailySleep} />
@@ -157,13 +123,38 @@ const Home: NextPage = ({ oura }: any) => {
 export default Home;
 
 export async function getStaticProps() {
-  const [ouraDailySleep, ouraSleepPeriods] = await Promise.all([getOuraDailySleep(), getOuraSleepPeriods()]);
+  const [ouraDailySleep, ouraSleepPeriods, wakatimeSummaries] = await Promise.all([
+    getOuraDailySleep(),
+    getOuraSleepPeriods(),
+    getWakatimeSummaries(),
+  ]);
+
+  const wakatimeLanguagesSummariesDictionary = wakatimeSummaries.reduce((acc: { [key: string]: number }, summary) => {
+    summary.languages.forEach((language) => {
+      if (acc[language.name]) {
+        acc[language.name] = acc[language.name] + language.total_seconds;
+      } else {
+        acc[language.name] = language.total_seconds;
+      }
+    });
+    return acc;
+  }, {});
+
+  const wakatimeLanguagesSummaries = Object.keys(wakatimeLanguagesSummariesDictionary)
+    .reduce((acc: WakatimeLanguageSummary[], key: string) => {
+      return [...acc, { name: key, seconds: +wakatimeLanguagesSummariesDictionary[key].toFixed(0) }];
+    }, [])
+    .filter((languageSummary) => languageSummary.seconds > 0)
+    .sort((a, b) => b.seconds - a.seconds);
 
   return {
     props: {
       oura: {
         dailySleep: ouraDailySleep,
         sleepPeriods: ouraSleepPeriods,
+      },
+      wakatime: {
+        languagesSummaries: wakatimeLanguagesSummaries,
       },
     },
     revalidate: 60 * 60,
