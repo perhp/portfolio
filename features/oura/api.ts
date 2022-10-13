@@ -27,5 +27,5 @@ export const getOuraSleepPeriods = async () => {
 
   return await fetch(`https://api.ouraring.com/v2/usercollection/sleep?${params.toString()}`, { headers })
     .then((res) => res.json())
-    .then((res) => res.data);
+    .then((res) => res.data.filter((sleep: any) => sleep.total_sleep_duration > 60 * 60));
 };
