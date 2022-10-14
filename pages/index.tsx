@@ -1,16 +1,12 @@
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import DefaultLayout from "../components/layout/default";
 import { getOuraDailySleep, getOuraSleepPeriods } from "../features/oura/api";
 import { DailySleepChart } from "../features/oura/DailySleepChart";
 import { SleepPeriodsChart } from "../features/oura/SleepPeriodsChart";
-import { getWakatimeSummaries, WakatimeLanguageSummary } from "../features/wakatime/api";
 import MeImage from "../public/images/me.jpeg";
 import styles from "./index.module.scss";
-
-const LanguagesSummariesChart = dynamic(() => import("../features/wakatime/LanguagesSummariesChart"), { ssr: false });
 
 const Home: NextPage = ({ oura, wakatime }: any) => {
   return (
@@ -96,21 +92,13 @@ const Home: NextPage = ({ oura, wakatime }: any) => {
               </div>
             </div>
           </div>
-          <div className="p-8 py-20 lg:px-28 lg:py-28">
-            <p className="text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
-              This is my time in languages distribution the past two weeks
-            </p>
-            <div className="pb-3 pl-5 mt-5 bg-blue-50">
-              <LanguagesSummariesChart languagesSummaries={wakatime.languagesSummaries} />
-            </div>
-          </div>
           <div className="py-20 pr-4 sm:p-8 lg:px-28 lg:py-28">
             <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
               These are my sleep scores the past month
             </p>
-            <div className="sm:p-5 sm:bg-blue-50">
+            <div className="border sm:p-5 border-gray-50">
               <DailySleepChart dailySleep={oura.dailySleep} />
-              <div className="h-16 sm:bg-blue-50"></div>
+              <div className="h-16 "></div>
               <SleepPeriodsChart sleepPeriods={oura.sleepPeriods} />
             </div>
           </div>
@@ -123,38 +111,13 @@ const Home: NextPage = ({ oura, wakatime }: any) => {
 export default Home;
 
 export async function getStaticProps() {
-  const [ouraDailySleep, ouraSleepPeriods, wakatimeSummaries] = await Promise.all([
-    getOuraDailySleep(),
-    getOuraSleepPeriods(),
-    getWakatimeSummaries(),
-  ]);
-
-  const wakatimeLanguagesSummariesDictionary = wakatimeSummaries.reduce((acc: { [key: string]: number }, summary) => {
-    summary.languages.forEach((language) => {
-      if (acc[language.name]) {
-        acc[language.name] = acc[language.name] + language.total_seconds;
-      } else {
-        acc[language.name] = language.total_seconds;
-      }
-    });
-    return acc;
-  }, {});
-
-  const wakatimeLanguagesSummaries = Object.keys(wakatimeLanguagesSummariesDictionary)
-    .reduce((acc: WakatimeLanguageSummary[], key: string) => {
-      return [...acc, { name: key, seconds: +wakatimeLanguagesSummariesDictionary[key].toFixed(0) }];
-    }, [])
-    .filter((languageSummary) => languageSummary.seconds > 0)
-    .sort((a, b) => b.seconds - a.seconds);
+  const [ouraDailySleep, ouraSleepPeriods] = await Promise.all([getOuraDailySleep(), getOuraSleepPeriods()]);
 
   return {
     props: {
       oura: {
         dailySleep: ouraDailySleep,
         sleepPeriods: ouraSleepPeriods,
-      },
-      wakatime: {
-        languagesSummaries: wakatimeLanguagesSummaries,
       },
     },
     revalidate: 60 * 60,
