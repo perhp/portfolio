@@ -8,33 +8,31 @@ function DefaultLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="flex">
-        <Link href="/">
-          <a
-            className="relative flex items-center justify-center w-20 h-20 text-2xl font-extrabold text-white bg-gray-800 md:text-4xl lg:h-28 lg:w-28 group sm:ml-10 md:ml-16 lg:ml-0"
-            style={{ fontFamily: '"Pacifico", cursive' }}
-          >
-            ph
-            <div className="absolute hidden w-full h-full transition-all border-2 border-gray-800 pointer-events-none lg:block -right-2 -bottom-2 group-hover:bottom-0 group-hover:right-0"></div>
-          </a>
+        <Link
+          href="/"
+          className="relative flex items-center justify-center w-20 h-20 text-2xl font-extrabold text-white bg-gray-800 md:text-4xl lg:h-28 lg:w-28 group sm:ml-10 md:ml-16 lg:ml-0"
+          style={{ fontFamily: '"Pacifico", cursive' }}>
+          ph<div className="absolute hidden w-full h-full transition-all border-2 border-gray-800 pointer-events-none lg:block -right-2 -bottom-2 group-hover:bottom-0 group-hover:right-0"></div>
+
         </Link>
         <nav className="flex items-center justify-end flex-grow gap-3 pr-5 sm:pr-10 md:pr-16 lg:pr-28 md:text-base">
-          <Link href="/">
-            <a
-              className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-blue-500 ${
-                router.pathname === "/" && "text-blue-500"
-              }`}
-            >
+          <Link
+            href="/"
+            className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-blue-500 ${
+              router.pathname === "/" && "text-blue-500"
+            }`}>
+            
               home.
-            </a>
+            
           </Link>
-          <Link href="/projects">
-            <a
-              className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-emerald-500 ${
-                router.pathname === "/projects" && "text-emerald-500"
-              }`}
-            >
+          <Link
+            href="/projects"
+            className={`relative flex items-center h-10 font-bold cursor-pointer transition-colors hover:text-emerald-500 ${
+              router.pathname === "/projects" && "text-emerald-500"
+            }`}>
+            
               projects.
-            </a>
+            
           </Link>
         </nav>
       </header>
