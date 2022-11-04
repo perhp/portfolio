@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactChild } from "react";
+import { ReactNode } from "react";
 
-function DefaultLayout({ children }: { children: ReactChild }) {
+function DefaultLayout({ children }: { children: ReactNode }) {
   const router = useRouter();
 
   return (

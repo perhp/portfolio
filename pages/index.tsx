@@ -84,7 +84,6 @@ const Home: NextPage = ({ oura, wakatime }: any) => {
                 <div className={styles.blobAnimation}></div>
                 <Image
                   src={MeImage}
-                  layout="raw"
                   alt="Image of Per Hansen"
                   className="relative z-20"
                   style={{ borderRadius: "63% 37% 37% 63% / 43% 37% 63% 57%" }}
