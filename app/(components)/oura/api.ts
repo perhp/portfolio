@@ -1,6 +1,7 @@
 import { format, subMonths } from "date-fns";
+import { DailySleep, SleepPeriod } from "./model";
 
-export const getOuraDailySleep = async () => {
+export const getOuraDailySleep = async (): Promise<DailySleep[]> => {
   const now = new Date();
   const startDate = subMonths(now, 1);
 
@@ -15,7 +16,7 @@ export const getOuraDailySleep = async () => {
     .then((res) => res.data);
 };
 
-export const getOuraSleepPeriods = async () => {
+export const getOuraSleepPeriods = async (): Promise<SleepPeriod[]> => {
   const now = new Date();
   const startDate = subMonths(now, 1);
 
