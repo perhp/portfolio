@@ -1,5 +1,3 @@
-import type { NextPage } from "next";
-
 const projects = [
   {
     name: "Visma Dinero ApS",
@@ -47,7 +45,7 @@ const projects = [
   },
 ];
 
-const Projects: NextPage = () => {
+export default function Page() {
   return (
     <>
       <div className="p-8 py-20 lg:px-28 lg:py-28">
@@ -76,6 +74,4 @@ const Projects: NextPage = () => {
       </div>
     </>
   );
-};
-
-export default Projects;
+}
