@@ -1,22 +1,29 @@
+import { Pacifico } from "@next/font/google";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { AnalyticsWrapper } from "./(components)/analytics";
+
 import "@tremor/react/dist/esm/tremor.css";
 import "styles/globals.css";
 
-import Link from "next/link";
-import { AnalyticsWrapper } from "./(components)/analytics";
+const pacifico = Pacifico({
+  variable: "--pacifico",
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = "" as any;
+  const pathname = usePathname();
 
   return (
-    <html>
+    <html lang="en">
       <head />
       <body>
         <div className="flex flex-col min-h-screen">
           <header className="flex">
             <Link
               href="/"
-              className="relative flex items-center justify-center w-20 h-20 text-2xl font-extrabold text-white bg-gray-800 md:text-4xl lg:h-28 lg:w-28 group sm:ml-10 md:ml-16 lg:ml-0"
-              style={{ fontFamily: '"Pacifico", cursive' }}
+              className={`relative flex items-center justify-center w-20 h-20 text-2xl font-extrabold text-white bg-gray-800 md:text-4xl lg:h-28 lg:w-28 group sm:ml-10 md:ml-16 lg:ml-0 ${pacifico.className}`}
             >
               ph
               <div className="absolute hidden w-full h-full transition-all border-2 border-gray-800 pointer-events-none lg:block -right-2 -bottom-2 group-hover:bottom-0 group-hover:right-0"></div>

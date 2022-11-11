@@ -29,15 +29,14 @@ export const SleepPeriodsChart = ({ sleepPeriods }: { sleepPeriods: SleepPeriod[
         SleepPeriodDictionary.LightSleepDuration,
       ]}
       dataKey="day"
-      showGradient={true}
-      startEndOnly={false}
-      showXAxis={true}
-      showYAxis={true}
-      showTooltip={true}
-      showLegend={true}
-      showGridLines={true}
-      showAnimation={false}
       stack={true}
+      valueFormatter={(value) => {
+        const fixedValue = (value / 60 / 60).toFixed(2);
+        const hours = fixedValue.split(".")[0];
+        const minutes = (60 * Number(`0.${fixedValue.split(".")[1]}`)).toFixed(0);
+
+        return `${Number(hours) > 0 ? `${hours}h ` : ""}${minutes}m`;
+      }}
       height="h-96"
     />
   );
