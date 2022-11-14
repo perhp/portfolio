@@ -5,6 +5,8 @@ import { DailySleepChart } from "./(components)/oura/daily-sleep-chart";
 import { SleepPeriodsChart } from "./(components)/oura/sleep-periods-chart";
 import styles from "./page.module.scss";
 
+export const revalidate = 3600;
+
 export default async function Page() {
   const ouraDailySleep = await getOuraDailySleep();
   const ouraSleepPeriods = await getOuraSleepPeriods();
