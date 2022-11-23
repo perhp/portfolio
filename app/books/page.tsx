@@ -39,7 +39,7 @@ const books: Book[] = [
   {
     name: "Seven and a Half Lessons About the Brain",
     author: "Lisa Feldman Barrett",
-    tier: Tier.S,
+    tier: Tier.A,
   },
   {
     name: "The Rationalist's Guide to the Galaxy",
@@ -49,7 +49,7 @@ const books: Book[] = [
   {
     name: "Money",
     author: "Yuval Noah Harari",
-    tier: Tier.A,
+    tier: Tier.S,
   },
 ];
 
@@ -79,9 +79,9 @@ export default function Page() {
         <p className="text-xs tracking-wider text-center text-white/50">Each tier is unordered</p>
 
         <div className="flex flex-col gap-10 mt-10">
-          <TierSection title="S-Tier" books={books.filter((book) => book.tier === Tier.S)} />
-          <TierSection title="A-Tier" books={books.filter((book) => book.tier === Tier.A)} />
-          <TierSection title="B-Tier" books={books.filter((book) => book.tier === Tier.B)} />
+          <TierSection title="Excellent" books={books.filter((book) => book.tier === Tier.S)} />
+          <TierSection title="Good" books={books.filter((book) => book.tier === Tier.A)} />
+          <TierSection title="Not for me" books={books.filter((book) => book.tier === Tier.B)} />
         </div>
       </div>
     </>
