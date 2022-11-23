@@ -56,7 +56,7 @@ const books: Book[] = [
 function TierSection({ title, books }: { title: string; books: Book[] }) {
   return (
     <div className="relative flex">
-      <div className="flex flex-col w-full pl-4 sm:pl-8">
+      <div className="flex flex-col w-full">
         <h2 className="pl-5 text-xl font-extrabold border-l-2 border-white">{title}</h2>
         <div className="grid grid-cols-1 gap-2 mt-5 md:grid-cols-2 lg:grid-cols-3">
           {books.map((book, i) => (

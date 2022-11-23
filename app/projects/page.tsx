@@ -60,7 +60,7 @@ export default function Page() {
         <p className="text-sm tracking-wider text-center uppercase">
           These are the projects and companies I&apos;ve been involved with over the years.
         </p>
-        <div className="grid grid-cols-1 gap-3 mt-10 md:grid-cols-2 xl:grid-cols-3 lg:mt-8">
+        <div className="grid grid-cols-1 gap-3 mt-10 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <a
               key={index}
