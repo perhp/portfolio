@@ -1,43 +1,58 @@
-import Image from "next/image";
-import MeImage from "../public/images/me.jpeg";
-import { getOuraDailySleep, getOuraSleepPeriods } from "./(components)/oura/api";
-import { DailySleepChart } from "./(components)/oura/daily-sleep-chart";
-import { SleepPeriodsChart } from "./(components)/oura/sleep-periods-chart";
-import styles from "./page.module.scss";
+import {
+  ArrowSmallDownIcon,
+  ArrowSmallRightIcon,
+  ArrowSmallUpIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { CategoryBarWrapper } from "./(components)/category-bar-wrapper/category-bar-wrapper";
+import { getOuraSleepPeriods } from "./(components)/oura/api";
+import styles from "./signature.module.scss";
 
+// Revalidate every 60 minutes
 export const revalidate = 3600;
 
 export default async function Page() {
-  const ouraDailySleep = await getOuraDailySleep();
-  const ouraSleepPeriods = await getOuraSleepPeriods();
+  const sleepPeriods = await getOuraSleepPeriods();
+  const sleepToday = sleepPeriods.at(-1);
+  const sleepYesterday = sleepPeriods.at(-2);
+  const readinessDifference = (sleepToday?.readiness.score ?? 0) - (sleepYesterday?.readiness.score ?? 0);
 
   return (
     <>
-      <div className="flex flex-col flex-grow gap-10 p-8 py-10 2xl:flex-row lg:p-28">
-        <div className="2xl:w-1/2 xl:pr-28">
-          <p className="mb-1 text-xl font-light leading-4 tracking-wide xl:text-left lg:mb-1 lg:text-4xl">
-            Hi, my name is
-          </p>
-          <h1 className="relative text-4xl font-extrabold lg:text-7xl w-min whitespace-nowrap">
+      <div className="flex flex-col flex-grow gap-16 p-8 sm:flex-row sm:p-16">
+        <div className="sm:w-1/2">
+          <p className="text-xl font-light leading-4 tracking-wider lg:text-4xl">Hi, my name is</p>
+          <h1 className="relative -ml-[2px] text-4xl font-extrabold lg:text-7xl w-min whitespace-nowrap text-white">
             <span className="relative z-20">Per Hansen</span>
-            <div className="absolute z-10 hidden w-4/5 h-8 bg-blue-100 lg:block -left-2 -bottom-1"></div>
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 418 42"
+              className="absolute left-0 w-full h-14 top-1/2 fill-gray-800"
+              preserveAspectRatio="none"
+            >
+              <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
+            </svg>
           </h1>
-          <p className="mt-6 xl:mt-10 sm:text-xl">
+          <p className="mt-10">
             I&apos;m a frontend developer and full-stack wannabe. I enjoy developing anything web and occasionally
             experiment with Arduino, Unity or really any technology i find interesting.
           </p>
-          <p className="mt-2 sm:text-xl">
-            Business inquiries at{" "}
-            <a href="mailto:hello@perhp.com" target="_blank" rel="noreferrer" className="relative inline-block group">
-              <span className="relative z-20 font-medium">hello@perhp.com</span>
-              <span className="absolute bottom-0 z-10 block h-2 transition-all bg-blue-100 sm:h-3 -left-1 -right-1 group-hover:h-7"></span>
+          <div className="mt-3">
+            <a
+              href="mailto:hello@perhp.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 hover:text-slate-300"
+            >
+              Hire me <ArrowTopRightOnSquareIcon className="w-5 h-5" />
             </a>
-          </p>
+          </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 596 289"
             fill="none"
-            className="pb-3 border-b border-gray-400 mt-14 max-h-24"
+            className="pb-3 border-b border-white mt-14 max-h-24"
           >
             <path
               d="M178 31C169.894 38.6363 163.15 47.2952 156.222 56C141.318 74.7283 126.52 93.5416 111.556 112.222C89.7418 139.454 67.6258 166.439 45 193"
@@ -68,29 +83,53 @@ export default async function Page() {
               className={styles.signature_4}
             />
           </svg>
-          <p className="mt-2 text-sm font-bold ">Per Hansen</p>
+          <p className="mt-2 text-sm font-bold">Per Hansen</p>
           <p className="text-xs">Software Developer</p>
         </div>
-        <div className="relative flex justify-center pt-4 2xl:w-1/2">
-          <div className="relative max-w-md h-min">
-            <div className={styles.blobAnimation}></div>
-            <Image
-              src={MeImage}
-              alt="Image of Per Hansen"
-              className="relative z-20"
-              style={{ borderRadius: "63% 37% 37% 63% / 43% 37% 63% 57%" }}
-            />
+        <div className="flex flex-col sm:w-1/2">
+          <div className="relative bg-white/5">
+            <div className="flex p-5">
+              <div className="flex flex-col w-full">
+                <p className="text-sm">Today&apos;s Readiness</p>
+                <p className="text-3xl font-medium">{sleepToday?.readiness.score} of 100</p>
+              </div>
+              <div className="flex items-center gap-1 px-3 py-1 text-sm text-black bg-white rounded-full h-min">
+                {readinessDifference > 0 && <ArrowSmallUpIcon className="w-4 h-4 -ml-1" />}
+                {readinessDifference <= 0 && <ArrowSmallDownIcon className="w-4 h-4 -ml-1" />}
+                {readinessDifference}
+              </div>
+            </div>
+
+            <div className="p-5">
+              <CategoryBarWrapper
+                categoryPercentageValues={[60, 15, 15, 10]}
+                colors={["red", "yellow", "green", "blue", "purple"]}
+                tooltip={sleepToday?.readiness.score.toString()}
+                percentageValue={80}
+                showLabels={true}
+              />
+            </div>
+
+            <div className="p-5 mt-5 border-t border-white/5">
+              <Link href="/sleep" className="flex items-center gap-1 text-xs hover:text-slate-300">
+                Based on my sleep data <ArrowSmallRightIcon className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="py-20 pr-4 sm:p-8 lg:px-28 lg:py-28">
-        <p className="mb-6 text-base font-semibold tracking-wider text-center text-gray-600 uppercase">
-          These are my sleep scores the past month
-        </p>
-        <div className="border sm:p-5 border-gray-50">
-          <DailySleepChart dailySleep={ouraDailySleep} />
-          <div className="h-16 "></div>
-          <SleepPeriodsChart sleepPeriods={ouraSleepPeriods} />
+          <div className="relative mt-5 bg-white/5">
+            <div className="flex p-5">
+              <div className="flex flex-col w-full">
+                <p className="text-sm">Currently Reading</p>
+                <p className="text-3xl font-medium">How to Avoid a Climate Disaster</p>
+              </div>
+            </div>
+
+            <div className="p-5 mt-5 border-t border-white/5">
+              <Link href="/books" className="flex items-center gap-1 text-xs hover:text-slate-300">
+                See my tier list <ArrowSmallRightIcon className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>
