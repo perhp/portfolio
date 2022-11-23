@@ -105,7 +105,7 @@ export default async function Page() {
                 categoryPercentageValues={[60, 15, 15, 10]}
                 colors={["red", "yellow", "green", "blue", "purple"]}
                 tooltip={sleepToday?.readiness.score.toString()}
-                percentageValue={80}
+                percentageValue={sleepToday?.readiness.score}
                 showLabels={true}
               />
             </div>
