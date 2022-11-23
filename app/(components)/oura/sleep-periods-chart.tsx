@@ -16,7 +16,7 @@ export const SleepPeriodsChart = ({ sleepPeriods }: { sleepPeriods: SleepPeriod[
     <BarChart
       data={sleepPeriods.map((sleep) => ({
         ...sleep,
-        day: format(new Date(sleep.day), "dd MMM."),
+        day: format(new Date(sleep.day), "eeee dd MMM."),
         [SleepPeriodDictionary.AwakeTime]: sleep.awake_time,
         [SleepPeriodDictionary.DeepSleepDuration]: sleep.deep_sleep_duration,
         [SleepPeriodDictionary.RemSleepDuration]: sleep.rem_sleep_duration,

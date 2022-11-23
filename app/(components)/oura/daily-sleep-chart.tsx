@@ -18,7 +18,7 @@ export const DailySleepChart = ({ dailySleep }: { dailySleep: DailySleep[] }) =>
     <LineChart
       data={dailySleep.map((sleep) => ({
         ...sleep,
-        day: format(new Date(sleep.timestamp), "dd MMM."),
+        day: format(new Date(sleep.timestamp), "eeee dd MMM."),
         [DailySleepDictionary.DeepSleep]: sleep.contributors.deep_sleep,
         [DailySleepDictionary.REMSleep]: sleep.contributors.rem_sleep,
         [DailySleepDictionary.Latency]: sleep.contributors.latency,
