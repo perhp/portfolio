@@ -103,7 +103,7 @@ export default async function Page() {
             <div className="p-5">
               <CategoryBarWrapper
                 categoryPercentageValues={[60, 15, 15, 10]}
-                colors={["red", "yellow", "green", "blue", "purple"]}
+                colors={["slate", "slate", "sky", "purple"]}
                 tooltip={sleepToday?.readiness.score.toString()}
                 percentageValue={sleepToday?.readiness.score}
                 showLabels={true}
