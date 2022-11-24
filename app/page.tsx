@@ -56,7 +56,7 @@ export default async function Page() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 596 289"
             fill="none"
-            className="pb-3 border-b border-white mt-14 max-h-16"
+            className="pb-3 border-b border-white mt-14 max-h-20"
           >
             <path
               d="M178 31C169.894 38.6363 163.15 47.2952 156.222 56C141.318 74.7283 126.52 93.5416 111.556 112.222C89.7418 139.454 67.6258 166.439 45 193"

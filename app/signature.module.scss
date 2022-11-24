@@ -9,14 +9,14 @@
 $animationDuration: 0.75s;
 
 .signature_1 {
-  @apply stroke-blue-100;
+  @apply stroke-white;
   stroke-dasharray: 209.66062927246094;
   stroke-dashoffset: 209.66062927246094;
   animation: signature math.div($animationDuration, 2) ease-in forwards;
 }
 
 .signature_2 {
-  @apply stroke-blue-100;
+  @apply stroke-white;
   stroke-dasharray: 524.4884033203125;
   stroke-dashoffset: 524.4884033203125;
   animation: signature $animationDuration ease-in-out forwards;
@@ -24,7 +24,7 @@ $animationDuration: 0.75s;
 }
 
 .signature_3 {
-  @apply stroke-blue-100;
+  @apply stroke-white;
   stroke-dasharray: 1771.633056640625;
   stroke-dashoffset: 1771.633056640625;
   animation: signature $animationDuration ease-in-out forwards;
@@ -32,7 +32,7 @@ $animationDuration: 0.75s;
 }
 
 .signature_4 {
-  @apply stroke-blue-100;
+  @apply stroke-white;
   stroke-dasharray: 497.0262145996094;
   stroke-dashoffset: 497.0262145996094;
   animation: signature math.div($animationDuration, 1.5) ease-in-out forwards;
