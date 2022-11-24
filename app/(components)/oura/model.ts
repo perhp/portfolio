@@ -13,6 +13,24 @@ export interface DailySleep {
   timestamp: string;
 }
 
+export interface DailyReadiness {
+  contributors: {
+    activity_balance: number;
+    body_temperature: number;
+    hrv_balance: number;
+    previous_day_activity: number;
+    previous_night: number;
+    recovery_index: number;
+    resting_heart_rate: number;
+    sleep_balance: number;
+  };
+  day: string;
+  score: number;
+  temperature_deviation: number;
+  temperature_trend_deviation: number;
+  timestamp: string;
+}
+
 export interface SleepPeriod {
   average_breath: number;
   average_heart_rate: number;

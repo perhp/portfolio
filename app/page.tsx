@@ -4,19 +4,23 @@ import {
   ArrowSmallUpIcon,
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
+import { subDays } from "date-fns";
 import Link from "next/link";
 import { CategoryBarWrapper } from "./(components)/category-bar-wrapper/category-bar-wrapper";
-import { getOuraSleepPeriods } from "./(components)/oura/api";
+import { getOuraDailyReadiness } from "./(components)/oura/api";
 import styles from "./signature.module.scss";
 
 // Revalidate every 60 minutes
 export const revalidate = 3600;
 
 export default async function Page() {
-  const sleepPeriods = await getOuraSleepPeriods();
-  const sleepToday = sleepPeriods.at(-1);
-  const sleepYesterday = sleepPeriods.at(-2);
-  const readinessDifference = (sleepToday?.readiness.score ?? 0) - (sleepYesterday?.readiness.score ?? 0);
+  const now = new Date();
+  const oneDayAgo = subDays(now, 1);
+  const dailyReadiness = await getOuraDailyReadiness(oneDayAgo);
+
+  const readinessToday = dailyReadiness.at(-1);
+  const readinessYesterday = dailyReadiness.at(-2);
+  const readinessDifference = (readinessToday?.score ?? 0) - (readinessYesterday?.score ?? 0);
 
   return (
     <>
@@ -28,7 +32,7 @@ export default async function Page() {
             <svg
               aria-hidden="true"
               viewBox="0 0 418 42"
-              className="absolute left-0 w-full h-8 sm:h-14 top-1/2 fill-sky-800"
+              className="absolute left-0 w-full h-8 sm:h-14 top-1/2 fill-gray-800"
               preserveAspectRatio="none"
             >
               <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
@@ -52,7 +56,7 @@ export default async function Page() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 596 289"
             fill="none"
-            className="pb-3 border-b border-white mt-14 max-h-24"
+            className="pb-3 border-b border-white mt-14 max-h-16"
           >
             <path
               d="M178 31C169.894 38.6363 163.15 47.2952 156.222 56C141.318 74.7283 126.52 93.5416 111.556 112.222C89.7418 139.454 67.6258 166.439 45 193"
@@ -91,7 +95,7 @@ export default async function Page() {
             <div className="flex p-5">
               <div className="flex flex-col w-full">
                 <p className="text-sm">Today&apos;s Readiness</p>
-                <p className="text-3xl font-medium">{sleepToday?.readiness.score} of 100</p>
+                <p className="text-3xl font-medium">{readinessToday?.score} of 100</p>
               </div>
               <div className="flex items-center gap-1 px-3 py-1 text-sm text-black bg-white rounded-full h-min">
                 {readinessDifference > 0 && <ArrowSmallUpIcon className="w-4 h-4 -ml-1" />}
@@ -104,8 +108,8 @@ export default async function Page() {
               <CategoryBarWrapper
                 categoryPercentageValues={[60, 15, 15, 10]}
                 colors={["slate", "slate", "sky", "purple"]}
-                tooltip={sleepToday?.readiness.score.toString()}
-                percentageValue={sleepToday?.readiness.score}
+                tooltip={readinessToday?.score.toString()}
+                percentageValue={readinessToday?.score}
                 showLabels={true}
               />
             </div>

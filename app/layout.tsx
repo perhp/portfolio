@@ -29,9 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className="flex flex-col w-full max-w-screen-xl min-h-screen mx-auto">
           <header className="flex gap-5 px-8 my-5 sm:px-16">
-            <Link href="/" className={`relative text-white text-2xl h-min group ${pacifico.className}`}>
-              perhp
-              <span className="absolute bottom-0 block w-8 h-1 -ml-[5px] transform -translate-x-1/2 bg-white rounded-md left-1/2"></span>
+            <Link href="/" className={`text-gray-200 text-xl h-min group ${pacifico.className}`}>
+              perhp.
             </Link>
             <nav className="flex items-center justify-end flex-grow gap-3 text-sm">
               <Link

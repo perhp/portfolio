@@ -1,3 +1,4 @@
+import { subMonths } from "date-fns";
 import { getOuraDailySleep, getOuraSleepPeriods } from "../(components)/oura/api";
 import { DailySleepChart } from "../(components)/oura/daily-sleep-chart";
 import { SleepPeriodsChart } from "../(components)/oura/sleep-periods-chart";
@@ -6,8 +7,11 @@ import { SleepPeriodsChart } from "../(components)/oura/sleep-periods-chart";
 export const revalidate = 3600;
 
 export default async function Page() {
-  const ouraDailySleep = await getOuraDailySleep();
-  const ouraSleepPeriods = await getOuraSleepPeriods();
+  const now = new Date();
+  const oneMonthAgo = subMonths(now, 1);
+
+  const ouraDailySleep = await getOuraDailySleep(oneMonthAgo);
+  const ouraSleepPeriods = await getOuraSleepPeriods(oneMonthAgo);
 
   return (
     <>

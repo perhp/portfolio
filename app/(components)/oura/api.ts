@@ -1,30 +1,45 @@
-import { format, subMonths } from "date-fns";
-import { DailySleep, SleepPeriod } from "./model";
+import { format } from "date-fns";
+import { DailyReadiness, DailySleep, SleepPeriod } from "./model";
 
-export const getOuraDailySleep = async (): Promise<DailySleep[]> => {
-  const now = new Date();
-  const startDate = subMonths(now, 1);
-
+export const getOuraDailySleep = async (startDate?: Date): Promise<DailySleep[]> => {
   const headers = new Headers();
   headers.append("Authorization", `Bearer ${process.env.OURA_PERSONAL_ACCESS_TOKEN}`);
 
   const params = new URLSearchParams();
-  params.append("start_date", format(startDate, "yyyy-MM-dd"));
+
+  if (startDate) {
+    params.append("start_date", format(startDate, "yyyy-MM-dd"));
+  }
 
   return await fetch(`https://api.ouraring.com/v2/usercollection/daily_sleep?${params.toString()}`, { headers })
     .then((res) => res.json())
     .then((res) => res.data);
 };
 
-export const getOuraSleepPeriods = async (): Promise<SleepPeriod[]> => {
-  const now = new Date();
-  const startDate = subMonths(now, 1);
-
+export const getOuraDailyReadiness = async (startDate?: Date): Promise<DailyReadiness[]> => {
   const headers = new Headers();
   headers.append("Authorization", `Bearer ${process.env.OURA_PERSONAL_ACCESS_TOKEN}`);
 
   const params = new URLSearchParams();
-  params.append("start_date", format(startDate, "yyyy-MM-dd"));
+
+  if (startDate) {
+    params.append("start_date", format(startDate, "yyyy-MM-dd"));
+  }
+
+  return await fetch(`https://api.ouraring.com/v2/usercollection/daily_readiness?${params.toString()}`, { headers })
+    .then((res) => res.json())
+    .then((res) => res.data);
+};
+
+export const getOuraSleepPeriods = async (startDate?: Date): Promise<SleepPeriod[]> => {
+  const headers = new Headers();
+  headers.append("Authorization", `Bearer ${process.env.OURA_PERSONAL_ACCESS_TOKEN}`);
+
+  const params = new URLSearchParams();
+
+  if (startDate) {
+    params.append("start_date", format(startDate, "yyyy-MM-dd"));
+  }
 
   return await fetch(`https://api.ouraring.com/v2/usercollection/sleep?${params.toString()}`, { headers })
     .then((res) => res.json())
