@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div className="flex items-center gap-5 text-sm font-bold sm:ml-auto">
               <a
-                href="https://github.com/perhp"
+                href="https://github.com/perhp/portfolio"
                 target="_blank"
                 rel="noreferrer"
                 className="relative flex items-center h-10 cursor-pointer hover:text-slate-300"
