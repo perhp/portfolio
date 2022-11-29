@@ -1,6 +1,6 @@
 "use client";
 
-import { Manrope, Pacifico } from "@next/font/google";
+import { Manrope } from "@next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnalyticsWrapper } from "./(components)/analytics";
@@ -8,15 +8,9 @@ import { AnalyticsWrapper } from "./(components)/analytics";
 import "@tremor/react/dist/esm/tremor.css";
 import "styles/globals.css";
 
-const pacifico = Pacifico({
-  variable: "--pacifico",
-  weight: "400",
-  subsets: ["latin"],
-});
-
 const manrope = Manrope({
   variable: "--manrope",
-  weight: ["400", "500", "700", "800"],
+  weight: ["200", "400", "500", "700", "800"],
   subsets: ["latin"],
 });
 
@@ -28,44 +22,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head />
       <body>
         <div className="flex flex-col w-full max-w-screen-xl min-h-screen mx-auto">
-          <header className="flex gap-5 px-8 my-5 sm:px-16">
-            <Link href="/" className={`text-gray-200 text-xl h-min group ${pacifico.className}`}>
-              perhp.
-            </Link>
-            <nav className="flex items-center justify-end flex-grow gap-3 text-sm">
-              <Link
-                href="/"
-                className={`relative flex items-center h-10 cursor-pointer hover:text-slate-300 ${
-                  pathname === "/" && "text-sky-200 hover:text-sky-300"
-                }`}
-              >
-                home.
-              </Link>
-              <Link
-                href="/projects"
-                className={`relative flex items-center h-10 cursor-pointer hover:text-slate-300 ${
-                  pathname === "/projects" && "text-sky-300 hover:text-sky-300"
-                }`}
-              >
-                projects.
-              </Link>
-              <Link
-                href="/sleep"
-                className={`relative flex items-center h-10 cursor-pointer hover:text-slate-300 ${
-                  pathname === "/sleep" && "text-sky-300 hover:text-sky-300"
-                }`}
-              >
-                sleep.
-              </Link>
-              <Link
-                href="/books"
-                className={`relative flex items-center h-10 cursor-pointer hover:text-slate-300 ${
-                  pathname === "/books" && "text-sky-300 hover:text-sky-300"
-                }`}
-              >
-                books.
-              </Link>
+          <header className="flex flex-col px-8 my-5 sm:px-16">
+            <nav className="flex items-center justify-center flex-grow gap-3 text-sm">
+              <NavLink href="/">home.</NavLink>
+              <NavLink href="/projects">projects.</NavLink>
+              <NavLink href="/sleep">sleep.</NavLink>
+              <NavLink href="/books">books.</NavLink>
             </nav>
+            <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           </header>
           <main className="flex flex-grow">
             <div className="flex flex-col flex-grow">{children}</div>
@@ -100,5 +64,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AnalyticsWrapper />
       </body>
     </html>
+  );
+}
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  return (
+    <Link
+      href={href}
+      className={`relative flex items-center h-10 cursor-pointer text-white/30 hover:text-white text-xs font-light ${
+        pathname === href && "!text-white"
+      }`}
+    >
+      {children}
+    </Link>
   );
 }

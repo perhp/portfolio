@@ -90,8 +90,8 @@ export default async function Page() {
           <p className="mt-2 text-sm font-bold">Per Hansen</p>
           <p className="text-xs">Software Developer</p>
         </div>
-        <div className="flex flex-col sm:w-1/2">
-          <div className="relative bg-white/5">
+        <div className="relative flex flex-col sm:w-1/2">
+          <div className="relative z-20 border rounded-sm bg-white/5 border-white/5">
             <div className="flex p-5">
               <div className="flex flex-col w-full">
                 <p className="text-sm">Today&apos;s Readiness</p>
@@ -120,7 +120,7 @@ export default async function Page() {
               </Link>
             </div>
           </div>
-          <div className="relative mt-5 bg-white/5">
+          <div className="relative z-20 mt-5 border rounded-sm bg-white/5 border-white/5">
             <div className="flex p-5">
               <div className="flex flex-col w-full">
                 <p className="text-sm">Currently Reading</p>
@@ -135,6 +135,8 @@ export default async function Page() {
               </Link>
             </div>
           </div>
+
+          <div className="absolute w-3/4 h-full bg-purple-900 rounded-full opacity-25 -right-10 -top-10 blur-3xl"></div>
         </div>
       </div>
     </>
