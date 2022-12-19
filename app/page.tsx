@@ -136,7 +136,8 @@ export default async function Page() {
             </div>
           </div>
 
-          <div className="absolute w-3/4 h-full bg-purple-900 rounded-full opacity-25 -right-10 -top-10 blur-3xl"></div>
+          <div className="absolute w-3/4 h-full bg-purple-900 rounded-full opacity-20 -right-10 -top-10 blur-3xl"></div>
+          <div className="absolute w-3/4 h-full bg-orange-500 rounded-full opacity-10 -left-10 -bottom-10 blur-3xl"></div>
         </div>
       </div>
     </>
