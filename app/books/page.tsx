@@ -12,6 +12,11 @@ interface Book {
 
 const books: Book[] = [
   {
+    name: "How to Avoid a Climate Disaster",
+    author: "Bill Gates",
+    tier: Tier.S,
+  },
+  {
     name: "Ego Is the Enemy",
     author: "Ryan Holiday",
     tier: Tier.S,

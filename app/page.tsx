@@ -124,8 +124,8 @@ export default async function Page() {
             <div className="flex p-5">
               <div className="flex flex-col w-full">
                 <p className="text-sm">Currently Reading</p>
-                <p className="text-3xl font-medium">How to Avoid a Climate Disaster</p>
-                <p className="mt-1 text-sm text-slate-300">by Bill Gates</p>
+                <p className="text-3xl font-medium">Stillness Is the Key</p>
+                <p className="mt-1 text-sm text-slate-300">by Ryan Holiday</p>
               </div>
             </div>
 
