@@ -20,16 +20,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head />
       <body>
         <div className="flex flex-col min-h-screen">
-          <div className="flex flex-col w-full max-w-screen-xl mx-auto">
-            <header className="flex flex-col px-8 my-5 sm:px-16">
-              <nav className="flex items-center justify-center flex-grow gap-3 text-sm">
+          <div className="w-full border-b border-white/10">
+            <header className="flex flex-col max-w-screen-xl px-8 mx-auto sm:px-16">
+              <nav className="flex items-center justify-center flex-grow gap-5">
                 <NavLink href="/">home.</NavLink>
                 <NavLink href="/projects">projects.</NavLink>
                 <NavLink href="/sleep">sleep.</NavLink>
                 <NavLink href="/books">books.</NavLink>
               </nav>
-              <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+              <div className="h-px -mb-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
             </header>
+          </div>
+          <div className="flex flex-col w-full max-w-screen-xl mx-auto">
             <main className="flex flex-grow">
               <div className="flex flex-col flex-grow">{children}</div>
             </main>
@@ -73,11 +75,14 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className={`relative flex items-center h-10 cursor-pointer text-white/30 hover:text-white text-xs font-light ${
+      className={`relative flex items-center h-14 cursor-pointer text-white/60 hover:text-white text-sm font-light tracking-wider ${
         pathname === href && "!text-white"
       }`}
     >
       {children}
+      {pathname === href && (
+        <div className="absolute bottom-0 w-16 h-px transform -translate-x-1/2 translate-y-full left-1/2 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
+      )}
     </Link>
   );
 }
