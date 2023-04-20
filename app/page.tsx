@@ -124,8 +124,8 @@ export default async function Page() {
             <div className="flex p-5">
               <div className="flex flex-col w-full">
                 <p className="text-sm">Currently Reading</p>
-                <p className="text-3xl font-medium">Noise</p>
-                <p className="mt-1 text-sm text-slate-300">by Daniel Kahneman, Olivier Sibony, and Cass R. Sunstein</p>
+                <p className="text-3xl font-medium">Atomic Habits</p>
+                <p className="mt-1 text-sm text-slate-300">by James Clear</p>
               </div>
             </div>
 
