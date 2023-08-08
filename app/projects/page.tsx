@@ -1,5 +1,13 @@
 const projects = [
   {
+    name: "Gavemild",
+    description: "Gavemild is a platform for creating and sharing wishlists.",
+    employmentType: "Hobby project",
+    position: "Full-Stack Developer",
+    yearsInPosition: "Current",
+    link: "https://gavemild.dk",
+  },
+  {
     name: "Visma Dinero ApS",
     description: "Visma Dinero ApS is an accounting system for entrepreneurs and small businesses.",
     employmentType: "Freelance",
@@ -9,8 +17,7 @@ const projects = [
   },
   {
     name: "Besprout.io",
-    description:
-      "Besprout.io provides inspiration and guidance for new and experienced vegans on where to get exciting vegan products.",
+    description: "Besprout.io provides inspiration and guidance for new and experienced vegans on where to get exciting vegan products.",
     employmentType: "Hobby project",
     position: "Full-Stack Developer & Owner",
     yearsInPosition: "Current",
