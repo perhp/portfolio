@@ -1,7 +1,7 @@
 import { subMonths } from "date-fns";
-import { getOuraDailySleep, getOuraSleepPeriods } from "../(components)/oura/api";
-import { DailySleepChart } from "../(components)/oura/daily-sleep-chart";
-import { SleepPeriodsChart } from "../(components)/oura/sleep-periods-chart";
+import { getOuraDailySleep, getOuraSleepPeriods } from "../_components/oura/api";
+import { DailySleepChart } from "../_components/oura/daily-sleep-chart";
+import { SleepPeriodsChart } from "../_components/oura/sleep-periods-chart";
 
 // Revalidate every 60 minutes
 export const revalidate = 3600;

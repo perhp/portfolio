@@ -3,7 +3,7 @@
 import { Manrope } from "@next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnalyticsWrapper } from "./(components)/analytics";
+import { AnalyticsWrapper } from "./_components/analytics";
 
 import "@tremor/react/dist/esm/tremor.css";
 import "styles/globals.css";
