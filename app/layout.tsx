@@ -27,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <NavLink href="/projects">projects.</NavLink>
                 <NavLink href="/sleep">sleep.</NavLink>
                 <NavLink href="/books">books.</NavLink>
+                <NavLink href="/satellites">satellites.</NavLink>
               </nav>
               <div className="h-px -mb-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
             </header>
