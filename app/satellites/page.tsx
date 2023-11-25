@@ -22,7 +22,7 @@ export default function Page() {
       <p className="text-sm tracking-wider text-center uppercase">My satellite images</p>
       <p className="text-xs tracking-wider text-center text-white/50">Images captured by meteorological satellites</p>
 
-      <p className="flex flex-col p-6 mt-10 text-sm rounded bg-white/5">
+      <p className="p-6 mt-10 text-sm rounded bg-white/5">
         I utilize straightforward methods to receive images from weather satellites. I do this by connecting an RTL-SDR dongle with a
         V-dipole antenna, which helps in capturing the images. After receiving them, I process these images using an APT decoder.
       </p>
