@@ -38,14 +38,14 @@ export default function Page() {
                 alt={satellite.name}
                 width={1600}
                 height={800}
-                className="absolute inset-0 z-10 transition-opacity pointer-events-none group-hover:opacity-0"
+                className="absolute inset-0 z-10 transition-opacity group-hover:opacity-0"
               />
               <Image
                 src={satellite.imageWithLandmarks}
                 alt={satellite.name + " with landmarks"}
                 width={1600}
                 height={800}
-                className="relative pointer-events-none -z-10"
+                className="relative -z-10"
               />
             </div>
           </div>
