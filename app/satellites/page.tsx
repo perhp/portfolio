@@ -4,15 +4,33 @@ interface Satellite {
   name: string;
   date: string;
   image: string;
-  imageWithLandmarks: string;
+  imageMap: string;
 }
 
 const satellites: Satellite[] = [
   {
+    name: "NOAA 18",
+    date: "26/11/2023 @ 21:45",
+    image: "/images/satellites/2023-11-26/21-45_noaa-18/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-11-26/21-45_noaa-18/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
+    name: "NOAA 19",
+    date: "26/11/2023 @ 20:08",
+    image: "/images/satellites/2023-11-26/20-08_noaa-19/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-11-26/20-08_noaa-19/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
+    name: "NOAA 15",
+    date: "26/11/2023 @ 19:15",
+    image: "/images/satellites/2023-11-26/19-15_noaa-15/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-11-26/19-15_noaa-15/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
     name: "NOAA 15",
     date: "25/11/2023 @ 18:05",
-    image: "/images/satellites/noaa-15_2023-11-25-18-05.png",
-    imageWithLandmarks: "/images/satellites/noaa-15_2023-11-25-18-05-landmarks.png",
+    image: "/images/satellites/2023-11-25/18-05_noaa-15/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-11-25/18-05_noaa-15/avhrr_apt_rgb_MCIR_map.png",
   },
 ];
 
@@ -40,13 +58,7 @@ export default function Page() {
                 height={800}
                 className="absolute inset-0 z-10 transition-opacity group-hover:opacity-0"
               />
-              <Image
-                src={satellite.imageWithLandmarks}
-                alt={satellite.name + " with landmarks"}
-                width={1600}
-                height={800}
-                className="relative -z-10"
-              />
+              <Image src={satellite.imageMap} alt={satellite.name + " with map"} width={1600} height={800} className="relative -z-10" />
             </div>
           </div>
         ))}
