@@ -76,7 +76,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className={`relative flex items-center h-14 cursor-pointer text-white/60 hover:text-white text-sm font-light tracking-wider ${
+      className={`relative flex items-center h-14 cursor-pointer text-white/60 hover:text-white text-xs md:text-sm font-light tracking-wider ${
         pathname === href && "!text-white"
       }`}
     >
