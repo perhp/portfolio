@@ -9,6 +9,12 @@ interface Satellite {
 
 const satellites: Satellite[] = [
   {
+    name: "NOAA 19",
+    date: "26/11/2023 @ 19:45",
+    image: "/images/satellites/2023-11-27/19-45_noaa-19/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-11-27/19-45_noaa-19/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
     name: "NOAA 18",
     date: "26/11/2023 @ 21:45",
     image: "/images/satellites/2023-11-26/21-45_noaa-18/avhrr_apt_rgb_MCIR.png",
