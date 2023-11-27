@@ -9,8 +9,14 @@ interface Satellite {
 
 const satellites: Satellite[] = [
   {
+    name: "NOAA 18",
+    date: "27/11/2023 @ 21:30",
+    image: "/images/satellites/2023-11-27/21-30_noaa-18/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-11-27/21-30_noaa-18/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
     name: "NOAA 19",
-    date: "26/11/2023 @ 19:45",
+    date: "27/11/2023 @ 19:45",
     image: "/images/satellites/2023-11-27/19-45_noaa-19/avhrr_apt_rgb_MCIR.png",
     imageMap: "/images/satellites/2023-11-27/19-45_noaa-19/avhrr_apt_rgb_MCIR_map.png",
   },
@@ -47,8 +53,7 @@ export default function Page() {
       <p className="text-xs tracking-wider text-center text-white/50">Images captured by meteorological satellites</p>
 
       <p className="p-6 mt-10 text-sm rounded bg-white/5">
-        I utilize straightforward methods to receive images from weather satellites. I do this by connecting an RTL-SDR dongle with a
-        V-dipole antenna, which helps in capturing the images. After receiving them, I process these images using an APT decoder.
+        I capture images from weather satellites using an RTL-SDR v4 dongle connected to a V-dipole antenna and process them with SatDump.
       </p>
 
       <div className="flex flex-col gap-10 mt-10">
