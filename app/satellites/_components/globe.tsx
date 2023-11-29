@@ -109,14 +109,14 @@ export default function Globe({ satellitePositions }: Props) {
                     alt={satelliteImage.name + " with map"}
                     width={800}
                     height={800}
-                    className="relative object-cover group-hover:hidden"
+                    className="relative object-cover rounded group-hover:hidden"
                   />
                   <Image
                     src={satelliteImage.imageMap}
                     alt={satelliteImage.name + " with map"}
                     width={800}
                     height={800}
-                    className="relative hidden object-cover group-hover:block"
+                    className="relative hidden object-cover rounded group-hover:block"
                   />
                 </div>
                 <h2 className="mt-2 text-2xl">{satelliteImage.name}</h2>
