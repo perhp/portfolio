@@ -1,9 +1,9 @@
 import { ArrowSmallDownIcon, ArrowSmallRightIcon, ArrowSmallUpIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { subDays } from "date-fns";
 import Link from "next/link";
-import { CategoryBarWrapper } from "./_components/category-bar-wrapper/category-bar-wrapper";
 import { getOuraDailyReadiness } from "./_components/oura/api";
 
+import { CategoryBar } from "@tremor/react";
 import styles from "./signature.module.scss";
 
 // Revalidate every 60 minutes
@@ -89,11 +89,11 @@ export default async function Page() {
           </div>
 
           <div className="p-5">
-            <CategoryBarWrapper
-              categoryPercentageValues={[60, 15, 15, 10]}
+            <CategoryBar
+              values={[60, 15, 15, 10]}
               colors={["slate", "slate", "sky", "purple"]}
               tooltip={readinessToday?.score.toString()}
-              percentageValue={readinessToday?.score}
+              markerValue={readinessToday?.score}
               showLabels={true}
             />
           </div>
