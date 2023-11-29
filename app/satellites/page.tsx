@@ -16,7 +16,7 @@ export default async function Page() {
   return (
     <div className="p-8 sm:p-16">
       <h1 className="text-sm tracking-wider text-center uppercase">My satellite images</h1>
-      <p className="text-xs tracking-wider text-center text-white/50">Images captured by weather satellites</p>
+      <p className="text-xs tracking-wider text-center text-white/50">The sphere illustrates the current location of the satellites.</p>
       <Globe satellitePositions={satellitePositions} />
     </div>
   );

@@ -1,6 +1,6 @@
 import { N2YOSatellitePosition } from "../_models/n2yo-satellite-position";
 
-interface SatelliteImage {
+export interface SatelliteImage {
   satelliteId: N2YOSatellitePosition["info"]["satid"];
   name: string;
   date: string;
