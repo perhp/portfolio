@@ -74,7 +74,9 @@ export default function Globe({ satellitePositions }: Props) {
 
   return (
     <div className="flex flex-col items-center">
-      <canvas ref={canvasRef} style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }} />
+      <div className="w-full max-w-xl aspect-square">
+        <canvas ref={canvasRef} style={{ width: "100%", height: "100%", contain: "layout paint size" }} />
+      </div>
       <div className="flex justify-center gap-3">
         {satellitePositions.map((satellitePosition) => (
           <button
@@ -90,7 +92,7 @@ export default function Globe({ satellitePositions }: Props) {
         ))}
       </div>
       {activeSatelliteId && (
-        <div className="relative z-10 grid grid-cols-1 gap-10 p-10 border rounded-lg bg-black/50 -mt-60 md:grid-cols-2 lg:grid-cols-3 backdrop-blur border-white/10">
+        <div className="relative z-10 grid grid-cols-1 gap-10 p-10 border rounded-lg -mt-28 bg-black/50 lg:-mt-60 md:grid-cols-2 lg:grid-cols-3 backdrop-blur border-white/10">
           <button
             onClick={() => setActiveSatelliteId(null)}
             className="absolute px-4 py-2 text-sm -translate-x-1/2 -translate-y-full border rounded-full left-1/2 -top-5 border-white/10 bg-black/75 hover:border-white/25 backdrop-blur"
@@ -101,7 +103,7 @@ export default function Globe({ satellitePositions }: Props) {
             .filter((satelliteImage) => satelliteImage.satelliteId === activeSatelliteId)
             .map((satelliteImage) => (
               <div key={satelliteImage.date} className="flex flex-col">
-                <div className="relative flex group h-96">
+                <div className="relative flex group max-h-96">
                   <Image
                     src={satelliteImage.image}
                     alt={satelliteImage.name + " with map"}
