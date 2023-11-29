@@ -1,7 +1,7 @@
 import { ArrowSmallDownIcon, ArrowSmallRightIcon, ArrowSmallUpIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { subDays } from "date-fns";
 import Link from "next/link";
-import { getOuraDailyReadiness } from "./_components/oura/api";
+import { getOuraDailyReadiness } from "./sleep/_components/oura/api";
 
 import { CategoryBar } from "@tremor/react";
 import styles from "./signature.module.scss";

@@ -28,7 +28,7 @@ export const SleepPeriodsChart = ({ sleepPeriods }: { sleepPeriods: SleepPeriod[
         SleepPeriodDictionary.RemSleepDuration,
         SleepPeriodDictionary.LightSleepDuration,
       ]}
-      dataKey="day"
+      index="day"
       stack={true}
       valueFormatter={(value) => {
         const fixedValue = (value / 60 / 60).toFixed(2);
@@ -37,7 +37,7 @@ export const SleepPeriodsChart = ({ sleepPeriods }: { sleepPeriods: SleepPeriod[
 
         return `${Number(hours) > 0 ? `${hours}h ` : ""}${minutes}m`;
       }}
-      height="h-96"
+      className="h-96"
     />
   );
 };

@@ -34,8 +34,7 @@ export const DailySleepChart = ({ dailySleep }: { dailySleep: DailySleep[] }) =>
         DailySleepDictionary.Restfulness,
         DailySleepDictionary.TotalSleep,
       ]}
-      dataKey="day"
-      showGradient={true}
+      index="day"
       startEndOnly={false}
       showXAxis={true}
       showYAxis={true}
@@ -43,7 +42,7 @@ export const DailySleepChart = ({ dailySleep }: { dailySleep: DailySleep[] }) =>
       showLegend={true}
       showGridLines={true}
       showAnimation={false}
-      height="h-96"
+      className="h-96"
     />
   );
 };
