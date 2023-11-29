@@ -1,12 +1,11 @@
 "use client";
 
-import { Manrope } from "@next/font/google";
+import { Manrope } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnalyticsWrapper } from "./_components/analytics";
 
-import "@tremor/react/dist/esm/tremor.css";
-import "styles/globals.css";
+import "styles/globals.scss";
 
 const manrope = Manrope({
   variable: "--manrope",
