@@ -1,7 +1,7 @@
 "use client";
 
 import createGlobe from "cobe";
-import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { N2YOSatellitePosition } from "../_models/n2yo-satellite-position";
 import { satelliteImages } from "../data/images";
@@ -9,6 +9,8 @@ import { satelliteImages } from "../data/images";
 type Props = {
   satellitePositions: N2YOSatellitePosition[];
 };
+
+const preloadImages = [];
 
 export default function Globe({ satellitePositions }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -23,10 +25,20 @@ export default function Globe({ satellitePositions }: Props) {
       return;
     }
 
+    satelliteImages.forEach((satelliteImage) => {
+      const image = new Image();
+      const imageMap = new Image();
+      image.src = satelliteImage.image;
+      imageMap.src = satelliteImage.imageMap;
+      preloadImages.push(image);
+      preloadImages.push(imageMap);
+    });
+
     let width = 0;
     let currentPhi = 0;
     let currentTheta = 0;
     const doublePi = Math.PI * 2;
+
     const onResize = () => canvasRef.current && (width = canvasRef.current.offsetWidth);
     window.addEventListener("resize", onResize);
     onResize();
@@ -46,7 +58,7 @@ export default function Globe({ satellitePositions }: Props) {
       glowColor: [1, 1, 1],
       markers: satellitePositions.map((satellitePosition) => ({
         location: [satellitePosition.positions[0].satlatitude, satellitePosition.positions[0].satlongitude],
-        size: 0.1,
+        size: 0.05,
       })),
       onRender: (state) => {
         state.phi = currentPhi;
@@ -69,6 +81,7 @@ export default function Globe({ satellitePositions }: Props) {
 
     return () => {
       globe.destroy();
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
@@ -91,40 +104,43 @@ export default function Globe({ satellitePositions }: Props) {
           </button>
         ))}
       </div>
-      {activeSatelliteId && (
-        <div className="relative z-10 grid grid-cols-1 gap-10 p-10 border rounded-lg -mt-28 bg-black/50 lg:-mt-60 md:grid-cols-2 lg:grid-cols-3 backdrop-blur border-white/10">
-          <button
-            onClick={() => setActiveSatelliteId(null)}
-            className="absolute px-4 py-2 text-sm -translate-x-1/2 -translate-y-full border rounded-full left-1/2 -top-5 border-white/10 bg-black/75 hover:border-white/25 backdrop-blur"
+      <AnimatePresence>
+        {activeSatelliteId && (
+          <motion.div
+            initial={{ opacity: 0, translateY: 20 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            exit={{ opacity: 0, translateY: 20 }}
+            className="relative z-10 grid grid-cols-1 gap-10 p-10 border rounded-lg -mt-28 bg-black/50 lg:-mt-60 md:grid-cols-2 lg:grid-cols-3 backdrop-blur border-white/10"
           >
-            Close
-          </button>
-          {satelliteImages
-            .filter((satelliteImage) => satelliteImage.satelliteId === activeSatelliteId)
-            .map((satelliteImage) => (
-              <div key={satelliteImage.date} className="flex flex-col">
-                <div className="relative flex group max-h-96">
-                  <Image
-                    src={satelliteImage.image}
-                    alt={satelliteImage.name + " with map"}
-                    width={800}
-                    height={800}
-                    className="relative object-cover rounded group-hover:hidden"
-                  />
-                  <Image
-                    src={satelliteImage.imageMap}
-                    alt={satelliteImage.name + " with map"}
-                    width={800}
-                    height={800}
-                    className="relative hidden object-cover rounded group-hover:block"
-                  />
+            <button
+              onClick={() => setActiveSatelliteId(null)}
+              className="absolute px-4 py-2 text-sm -translate-x-1/2 -translate-y-full border rounded-full left-1/2 -top-5 border-white/10 bg-black/75 hover:border-white/25 backdrop-blur"
+            >
+              Close
+            </button>
+            {satelliteImages
+              .filter((satelliteImage) => satelliteImage.satelliteId === activeSatelliteId)
+              .map((satelliteImage) => (
+                <div key={satelliteImage.date} className="flex flex-col">
+                  <div className="relative flex group min-h-[24rem] max-h-96">
+                    <img
+                      src={satelliteImage.image}
+                      alt={satelliteImage.name + " with map"}
+                      className="relative object-cover rounded group-hover:hidden"
+                    />
+                    <img
+                      src={satelliteImage.imageMap}
+                      alt={satelliteImage.name + " with map"}
+                      className="relative hidden object-cover rounded group-hover:block"
+                    />
+                  </div>
+                  <h2 className="mt-2 text-2xl">{satelliteImage.name}</h2>
+                  <p className="text-sm text-white/50">{satelliteImage.date}</p>
                 </div>
-                <h2 className="mt-2 text-2xl">{satelliteImage.name}</h2>
-                <p className="text-sm text-white/50">{satelliteImage.date}</p>
-              </div>
-            ))}
-        </div>
-      )}
+              ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
