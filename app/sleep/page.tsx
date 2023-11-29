@@ -14,14 +14,12 @@ export default async function Page() {
   const ouraSleepPeriods = await getOuraSleepPeriods(oneMonthAgo);
 
   return (
-    <>
-      <div className="p-8 sm:p-16">
-        <p className="text-sm tracking-wider text-center uppercase">These are my sleep scores the past month.</p>
-        <div className="flex flex-col gap-10 p-5 mt-10 bg-white/5">
-          <DailySleepChart dailySleep={ouraDailySleep} />
-          <SleepPeriodsChart sleepPeriods={ouraSleepPeriods} />
-        </div>
+    <div className="p-8 sm:p-16">
+      <h1 className="text-sm tracking-wider text-center uppercase">These are my sleep scores the past month.</h1>
+      <div className="flex flex-col gap-10 p-5 mt-10 bg-white/5">
+        <DailySleepChart dailySleep={ouraDailySleep} />
+        <SleepPeriodsChart sleepPeriods={ouraSleepPeriods} />
       </div>
-    </>
+    </div>
   );
 }
