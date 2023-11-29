@@ -74,11 +74,7 @@ export default function Globe({ satellitePositions }: Props) {
 
   return (
     <div className="flex flex-col items-center">
-      <canvas
-        ref={canvasRef}
-        style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
-        className={activeSatelliteId ? "blur-sm" : ""}
-      />
+      <canvas ref={canvasRef} style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }} />
       <div className="flex justify-center gap-3">
         {satellitePositions.map((satellitePosition) => (
           <button
@@ -94,10 +90,10 @@ export default function Globe({ satellitePositions }: Props) {
         ))}
       </div>
       {activeSatelliteId && (
-        <div className="relative z-10 grid grid-cols-1 gap-10 p-10 border rounded-lg bg-black/50 -mt-96 md:grid-cols-2 lg:grid-cols-3 backdrop-blur border-white/10">
+        <div className="relative z-10 grid grid-cols-1 gap-10 p-10 border rounded-lg bg-black/50 -mt-60 md:grid-cols-2 lg:grid-cols-3 backdrop-blur border-white/10">
           <button
             onClick={() => setActiveSatelliteId(null)}
-            className="absolute px-4 py-2 text-sm -translate-x-1/2 -translate-y-full border rounded-full left-1/2 -top-5 border-white/10 bg-black/20 hover:border-white/25"
+            className="absolute px-4 py-2 text-sm -translate-x-1/2 -translate-y-full border rounded-full left-1/2 -top-5 border-white/10 bg-black/75 hover:border-white/25 backdrop-blur"
           >
             Close
           </button>
