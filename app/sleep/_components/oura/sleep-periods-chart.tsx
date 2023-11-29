@@ -14,6 +14,7 @@ enum SleepPeriodDictionary {
 export const SleepPeriodsChart = ({ sleepPeriods }: { sleepPeriods: SleepPeriod[] }) => {
   return (
     <BarChart
+      index="day"
       data={sleepPeriods.map((sleep) => ({
         ...sleep,
         day: format(new Date(sleep.day), "eeee dd MMM."),
@@ -28,8 +29,6 @@ export const SleepPeriodsChart = ({ sleepPeriods }: { sleepPeriods: SleepPeriod[
         SleepPeriodDictionary.RemSleepDuration,
         SleepPeriodDictionary.LightSleepDuration,
       ]}
-      index="day"
-      stack={true}
       valueFormatter={(value) => {
         const fixedValue = (value / 60 / 60).toFixed(2);
         const hours = fixedValue.split(".")[0];
@@ -37,6 +36,8 @@ export const SleepPeriodsChart = ({ sleepPeriods }: { sleepPeriods: SleepPeriod[
 
         return `${Number(hours) > 0 ? `${hours}h ` : ""}${minutes}m`;
       }}
+      stack={true}
+      onValueChange={() => {}}
       className="h-96"
     />
   );

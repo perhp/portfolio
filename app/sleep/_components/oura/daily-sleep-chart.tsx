@@ -16,6 +16,7 @@ enum DailySleepDictionary {
 export const DailySleepChart = ({ dailySleep }: { dailySleep: DailySleep[] }) => {
   return (
     <LineChart
+      index="day"
       data={dailySleep.map((sleep) => ({
         ...sleep,
         day: format(new Date(sleep.timestamp), "eeee dd MMM."),
@@ -34,14 +35,8 @@ export const DailySleepChart = ({ dailySleep }: { dailySleep: DailySleep[] }) =>
         DailySleepDictionary.Restfulness,
         DailySleepDictionary.TotalSleep,
       ]}
-      index="day"
-      startEndOnly={false}
-      showXAxis={true}
-      showYAxis={true}
-      showTooltip={true}
-      showLegend={true}
-      showGridLines={true}
       showAnimation={false}
+      onValueChange={() => {}}
       className="h-96"
     />
   );
