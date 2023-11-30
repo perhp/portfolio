@@ -6,6 +6,12 @@ import { getOuraDailyReadiness } from "./sleep/_components/oura/api";
 import { CategoryBar } from "@tremor/react";
 import styles from "./signature.module.scss";
 
+export const metadata = {
+  title: "Per Hansen",
+  description:
+    "Hi, my name is Per Hansen. I'm a frontend developer and full-stack wannabe. I enjoy developing anything web and occasionally experiment with Arduino, Unity or really any technology i find interesting.",
+};
+
 // Revalidate every 60 minutes
 export const revalidate = 3600;
 export default async function Page() {

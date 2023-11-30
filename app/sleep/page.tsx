@@ -1,11 +1,16 @@
 import { subMonths } from "date-fns";
+import { Metadata } from "next";
 import { getOuraDailySleep, getOuraSleepPeriods } from "./_components/oura/api";
 import { DailySleepChart } from "./_components/oura/daily-sleep-chart";
 import { SleepPeriodsChart } from "./_components/oura/sleep-periods-chart";
 
+export const metadata: Metadata = {
+  title: "Sleep - Per Hansen",
+  description: "These are my sleep scores over the last months time.",
+};
+
 // Revalidate every 60 minutes
 export const revalidate = 3600;
-
 export default async function Page() {
   const now = new Date();
   const oneMonthAgo = subMonths(now, 1);

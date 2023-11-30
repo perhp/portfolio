@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import Globe from "./_components/globe";
 import { N2YOSatellitePosition } from "./_models/n2yo-satellite-position";
+
+export const metadata: Metadata = {
+  title: "Satellites - Per Hansen",
+  description: "Weather satellite imagery experiments.",
+};
 
 export const revalidate = 60;
 export default async function Page() {
