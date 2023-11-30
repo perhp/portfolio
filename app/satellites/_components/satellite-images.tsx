@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { satelliteImages as initialSatelliteImages } from "../data/images";
+import { satelliteImages as initialSatelliteImages } from "../_data/images";
 
 type Props = {
   activeSatelliteId: number | null;

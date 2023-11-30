@@ -2,11 +2,11 @@
 
 import { AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
+import { satelliteImages } from "../_data/images";
 import { useGlobe } from "../_hooks/use-globe";
 import { usePrefetchImages } from "../_hooks/use-prefetch-images";
 import { N2YOSatellitePosition } from "../_models/n2yo-satellite-position";
 import { locationToAngles } from "../_utils/location-to-angles";
-import { satelliteImages } from "../data/images";
 import SatelliteImages from "./satellite-images";
 
 type Props = {
