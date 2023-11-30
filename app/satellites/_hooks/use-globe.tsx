@@ -62,7 +62,7 @@ export const useGlobe = ({ canvasRef, activeSatelliteId, satellitePositions }: P
       theta: 0,
       dark: 1,
       diffuse: 1,
-      mapSamples: 20000,
+      mapSamples: 16000,
       mapBrightness: 1.1,
       baseColor: [1, 1, 1],
       markerColor: [200, 200, 200],
