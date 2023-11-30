@@ -25,7 +25,7 @@ export default function SatelliteImages({ activeSatelliteId, setActiveSatelliteI
       {showSatelliteImage && (
         <button
           onClick={() => setShowSatelliteImage(null)}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-5 lg:flex-row bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-5 lg:flex-row bg-black/50 backdrop-blur-sm focus:outline-none"
         >
           <img
             src={showSatelliteImage.image}
