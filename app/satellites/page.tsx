@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Globe from "./_components/globe";
+import { SatelliteId } from "./_data/images";
 import { N2YOSatellitePosition } from "./_models/n2yo-satellite-position";
 
 export const metadata: Metadata = {
@@ -14,9 +15,18 @@ export default async function Page() {
   const long = process.env.N2YO_LONGITUDE;
 
   const satellitePositions = await Promise.all<N2YOSatellitePosition>([
-    fetch(`https://api.n2yo.com/rest/v1/satellite/positions/25338/${lat}/${long}/0/1/?apiKey=${apiKey}`).then((res) => res.json()),
-    fetch(`https://api.n2yo.com/rest/v1/satellite/positions/28654/${lat}/${long}/0/1/?apiKey=${apiKey}`).then((res) => res.json()),
-    fetch(`https://api.n2yo.com/rest/v1/satellite/positions/33591/${lat}/${long}/0/1/?apiKey=${apiKey}`).then((res) => res.json()),
+    fetch(`https://api.n2yo.com/rest/v1/satellite/positions/${SatelliteId.NOAA15}/${lat}/${long}/0/1/?apiKey=${apiKey}`).then((res) =>
+      res.json()
+    ),
+    fetch(`https://api.n2yo.com/rest/v1/satellite/positions/${SatelliteId.NOAA18}/${lat}/${long}/0/1/?apiKey=${apiKey}`).then((res) =>
+      res.json()
+    ),
+    fetch(`https://api.n2yo.com/rest/v1/satellite/positions/${SatelliteId.NOAA19}/${lat}/${long}/0/1/?apiKey=${apiKey}`).then((res) =>
+      res.json()
+    ),
+    fetch(`https://api.n2yo.com/rest/v1/satellite/positions/${SatelliteId.METEORM23}/${lat}/${long}/0/1/?apiKey=${apiKey}`).then((res) =>
+      res.json()
+    ),
   ]);
 
   return (

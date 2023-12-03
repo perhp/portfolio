@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SatelliteImage, satelliteImages as initialSatelliteImages } from "../_data/images";
 
@@ -30,19 +29,15 @@ export default function SatelliteImages({ activeSatelliteId, setActiveSatelliteI
           onClick={() => setShowSatelliteImage(null)}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center p-5 lg:flex-row bg-black/50 backdrop-blur-sm focus:outline-none"
         >
-          <Image
+          <img
             src={showSatelliteImage.image}
             className="max-h-[calc(50vh-0.625rem)] lg:max-h-[calc(100vh-0.625rem)] lg:max-w-[calc(50%-0.625rem)]"
-            width={800}
-            height={800}
-            alt=""
+            alt={`${showSatelliteImage.name} ${showSatelliteImage.date}`}
           />
-          <Image
+          <img
             src={showSatelliteImage.imageMap}
             className="max-h-[calc(50vh-0.625rem)] lg:max-h-[calc(100vh-0.625rem)] lg:max-w-[calc(50%-0.625rem)]"
-            width={800}
-            height={800}
-            alt=""
+            alt={`${showSatelliteImage.name} ${showSatelliteImage.date} with map`}
           />
         </button>
       )}
@@ -66,19 +61,15 @@ export default function SatelliteImages({ activeSatelliteId, setActiveSatelliteI
           {satelliteImages.map((satelliteImage) => (
             <div key={satelliteImage.date} className="flex flex-col">
               <button onClick={() => setShowSatelliteImage(satelliteImage)} className="relative flex group min-h-[24rem] max-h-96">
-                <Image
+                <img
                   src={satelliteImage.image}
-                  alt={satelliteImage.name + " with map"}
-                  width={500}
-                  height={500}
                   className="relative object-cover w-full h-full rounded group-hover:hidden"
+                  alt={`${satelliteImage.name} ${satelliteImage.date}`}
                 />
-                <Image
+                <img
                   src={satelliteImage.imageMap}
-                  alt={satelliteImage.name + " with map"}
-                  width={500}
-                  height={500}
                   className="relative hidden object-cover w-full h-full rounded group-hover:block"
+                  alt={`${satelliteImage.name} ${satelliteImage.date} with map`}
                 />
               </button>
               <h2 className="mt-2 text-2xl">{satelliteImage.name}</h2>

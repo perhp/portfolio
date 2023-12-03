@@ -8,13 +8,35 @@ export interface SatelliteImage {
   imageMap: string;
 }
 
-enum SatelliteId {
+export enum SatelliteId {
   "NOAA15" = 25338,
   "NOAA18" = 28654,
   "NOAA19" = 33591,
+  "METEORM23" = 57166,
 }
 
 export const satelliteImages: SatelliteImage[] = [
+  {
+    satelliteId: SatelliteId.NOAA18,
+    name: "NOAA 18",
+    date: "03/12/2023 @ 11:00",
+    image: "/images/satellites/2023-12-03/11-00_noaa-18/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-12-03/11-00_noaa-18/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
+    satelliteId: SatelliteId.NOAA19,
+    name: "NOAA 19",
+    date: "03/12/2023 @ 10:45",
+    image: "/images/satellites/2023-12-03/10-45_noaa-19/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-12-03/10-45_noaa-19/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
+    satelliteId: SatelliteId.METEORM23,
+    name: "Meteor M2-3",
+    date: "03/12/2023 @ 10:15",
+    image: "/images/satellites/2023-12-03/10-15_meteor-m2-3/MSU-MR/msu_mr_rgb_221_corrected.png",
+    imageMap: "/images/satellites/2023-12-03/10-15_meteor-m2-3/MSU-MR/msu_mr_rgb_221_corrected_map.png",
+  },
   {
     satelliteId: SatelliteId.NOAA18,
     name: "NOAA 18",
