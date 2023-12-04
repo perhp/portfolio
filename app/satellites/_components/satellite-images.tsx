@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { SatelliteImage, satelliteImages as initialSatelliteImages } from "../_data/images";
 
@@ -24,23 +24,28 @@ export default function SatelliteImages({ activeSatelliteId, setActiveSatelliteI
 
   return (
     <>
-      {showSatelliteImage && (
-        <button
-          onClick={() => setShowSatelliteImage(null)}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-5 lg:flex-row bg-black/50 backdrop-blur-sm focus:outline-none"
-        >
-          <img
-            src={showSatelliteImage.image}
-            className="max-h-[calc(50vh-0.625rem)] lg:max-h-[calc(100vh-0.625rem)] lg:max-w-[calc(50%-0.625rem)]"
-            alt={`${showSatelliteImage.name} ${showSatelliteImage.date}`}
-          />
-          <img
-            src={showSatelliteImage.imageMap}
-            className="max-h-[calc(50vh-0.625rem)] lg:max-h-[calc(100vh-0.625rem)] lg:max-w-[calc(50%-0.625rem)]"
-            alt={`${showSatelliteImage.name} ${showSatelliteImage.date} with map`}
-          />
-        </button>
-      )}
+      <AnimatePresence>
+        {showSatelliteImage && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            onClick={() => setShowSatelliteImage(null)}
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center p-5 lg:flex-row bg-black/50 backdrop-blur-sm focus:outline-none"
+          >
+            <img
+              src={showSatelliteImage.image}
+              className="max-h-[calc(50vh-0.625rem)] lg:max-h-[calc(100vh-0.625rem)] lg:max-w-[calc(50%-0.625rem)]"
+              alt={`${showSatelliteImage.name} ${showSatelliteImage.date}`}
+            />
+            <img
+              src={showSatelliteImage.imageMap}
+              className="max-h-[calc(50vh-0.625rem)] lg:max-h-[calc(100vh-0.625rem)] lg:max-w-[calc(50%-0.625rem)]"
+              alt={`${showSatelliteImage.name} ${showSatelliteImage.date} with map`}
+            />
+          </motion.button>
+        )}
+      </AnimatePresence>
       <div className="relative">
         <motion.button
           onClick={() => setActiveSatelliteId(null)}
