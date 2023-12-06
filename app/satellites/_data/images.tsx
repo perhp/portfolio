@@ -17,6 +17,13 @@ export enum SatelliteId {
 
 export const satelliteImages: SatelliteImage[] = [
   {
+    satelliteId: SatelliteId.NOAA15,
+    name: "NOAA 15",
+    date: "06/12/2023 @ 18:30",
+    image: "/images/satellites/2023-12-06/18-30_noaa-15/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-12-06/18-30_noaa-15/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
     satelliteId: SatelliteId.NOAA19,
     name: "NOAA 19",
     date: "03/12/2023 @ 20:15",
