@@ -19,7 +19,7 @@ export default function Globe({ satellitePositions }: Props) {
   const [showSatelliteImages, setShowSatelliteImages] = useState(false);
   const activeSatelliteId = useRef<N2YOSatellitePosition["info"]["satid"] | null>(null);
 
-  usePrefetchImages({ urls: satelliteImages.flatMap((image) => [image.image, image.imageMap]) });
+  usePrefetchImages(satelliteImages.flatMap((image) => [image.image, image.imageMap]));
 
   const { focusRef } = useGlobe({
     activeSatelliteId,
