@@ -2,9 +2,7 @@
 
 import { AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import { satelliteImages } from "../_data/images";
 import { useGlobe } from "../_hooks/use-globe";
-import { usePrefetchImages } from "../_hooks/use-prefetch-images";
 import { N2YOSatellitePosition } from "../_models/n2yo-satellite-position";
 import { locationToAngles } from "../_utils/location-to-angles";
 import SatelliteImages from "./satellite-images";
@@ -18,8 +16,6 @@ export default function Globe({ satellitePositions }: Props) {
 
   const [showSatelliteImages, setShowSatelliteImages] = useState(false);
   const activeSatelliteId = useRef<N2YOSatellitePosition["info"]["satid"] | null>(null);
-
-  usePrefetchImages(satelliteImages.flatMap((image) => [image.image, image.imageMap]));
 
   const { focusRef } = useGlobe({
     activeSatelliteId,
