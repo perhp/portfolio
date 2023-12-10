@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Manrope } from "next/font/google";
 import { AnalyticsWrapper } from "./_components/analytics";
 import { NavLink } from "./_components/nav-link";
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </footer>
         </div>
         <AnalyticsWrapper />
+        <SpeedInsights />
       </body>
     </html>
   );
