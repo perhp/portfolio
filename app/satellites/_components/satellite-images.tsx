@@ -72,7 +72,7 @@ export default function SatelliteImages({ activeSatelliteId, setActiveSatelliteI
         >
           {satelliteImages.map((satelliteImage) => (
             <div key={satelliteImage.date} className="flex flex-col">
-              <button onClick={() => setShowSatelliteImage(satelliteImage)} className="relative flex group min-h-[24rem] max-h-96">
+              <button onClick={() => setShowSatelliteImage(satelliteImage)} className="relative flex group min-h-[24rem] max-h-96 w-full">
                 <Image
                   src={satelliteImage.image}
                   className="relative object-cover w-full h-full rounded group-hover:hidden"
