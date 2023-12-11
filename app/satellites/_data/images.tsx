@@ -19,6 +19,13 @@ export const satelliteImages: SatelliteImage[] = [
   {
     satelliteId: SatelliteId.METEORM23,
     name: "Meteor M2-3",
+    date: "11/12/2023 @ 10:15",
+    image: "/images/satellites/2023-12-11/10-15_meteor-m2-3/MSU-MR/msu_mr_rgb_221_corrected.png",
+    imageMap: "/images/satellites/2023-12-11/10-15_meteor-m2-3/MSU-MR/msu_mr_rgb_221_corrected_map.png",
+  },
+  {
+    satelliteId: SatelliteId.METEORM23,
+    name: "Meteor M2-3",
     date: "08/12/2023 @ 09:45",
     image: "/images/satellites/2023-12-08/09-45_meteor-m2-3/MSU-MR/msu_mr_rgb_221_corrected.png",
     imageMap: "/images/satellites/2023-12-08/09-45_meteor-m2-3/MSU-MR/msu_mr_rgb_221_corrected_map.png",
