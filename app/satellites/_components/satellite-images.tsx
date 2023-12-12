@@ -53,7 +53,7 @@ export default function SatelliteImages({ activeSatelliteId, setActiveSatelliteI
           </motion.button>
         )}
       </AnimatePresence>
-      <div className="relative">
+      <div className="relative w-full">
         <motion.button
           onClick={() => setActiveSatelliteId(null)}
           initial={{ opacity: 0 }}
