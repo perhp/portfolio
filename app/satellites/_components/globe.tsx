@@ -42,7 +42,7 @@ export default function Globe({ satellitePositions }: Props) {
       <div className="w-full max-w-xl aspect-square">
         <canvas ref={canvasRef} className={"w-full h-full"} />
       </div>
-      <div className="flex justify-center gap-3">
+      <div className="grid justify-center grid-cols-2 gap-3 lg:grid-cols-4">
         {satellitePositions.map((satellitePosition) => (
           <button
             key={satellitePosition.info.satid}
