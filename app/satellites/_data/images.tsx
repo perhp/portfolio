@@ -19,6 +19,13 @@ export const satelliteImages: SatelliteImage[] = [
   {
     satelliteId: SatelliteId.NOAA19,
     name: "NOAA 19",
+    date: "23/12/2023 @ 19:30",
+    image: "/images/satellites/2023-12-23/19-30_noaa-19/avhrr_apt_rgb_MCIR.png",
+    imageMap: "/images/satellites/2023-12-23/19-30_noaa-19/avhrr_apt_rgb_MCIR_map.png",
+  },
+  {
+    satelliteId: SatelliteId.NOAA19,
+    name: "NOAA 19",
     date: "21/12/2023 @ 19:45",
     image: "/images/satellites/2023-12-21/19-45_noaa-19/avhrr_apt_rgb_MCIR.png",
     imageMap: "/images/satellites/2023-12-21/19-45_noaa-19/avhrr_apt_rgb_MCIR_map.png",
