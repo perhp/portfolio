@@ -1,19 +1,13 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Manrope } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import { AnalyticsWrapper } from "./_components/analytics";
 import { NavLink } from "./_components/nav-link";
 
 import "styles/globals.scss";
 
-const manrope = Manrope({
-  variable: "--manrope",
-  weight: ["200", "400", "500", "700", "800"],
-  subsets: ["latin"],
-});
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={manrope.className} lang="en">
+    <html className={GeistSans.className} lang="en">
       <head />
       <body>
         <div className="flex flex-col min-h-screen">
