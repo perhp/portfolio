@@ -9,6 +9,14 @@ interface Project {
 
 export const projects: Project[] = [
   {
+    name: "permi.dk",
+    description: "permi.dk is an amateur weather satellite image project.",
+    employmentType: "Hobby project",
+    position: "Full-Stack Developer",
+    yearsInPosition: "Current",
+    link: "https://permi.dk",
+  },
+  {
     name: "Gavemild",
     description: "Gavemild is a platform for creating and sharing wishlists.",
     employmentType: "Hobby project",
