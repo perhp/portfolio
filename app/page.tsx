@@ -1,9 +1,7 @@
-import { ArrowSmallDownIcon, ArrowSmallRightIcon, ArrowSmallUpIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { subDays } from "date-fns";
+import { ArrowSmallRightIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { getOuraDailyReadiness } from "./sleep/_components/oura/api";
 
-import { CategoryBar } from "@tremor/react";
+import { projects } from "./projects/_data/projects";
 import styles from "./signature.module.scss";
 
 export const metadata = {
@@ -12,17 +10,7 @@ export const metadata = {
     "Hi, my name is Per Hansen. I'm a frontend developer and full-stack wannabe. I enjoy developing anything web and occasionally experiment with Arduino, Unity or really any technology i find interesting.",
 };
 
-// Revalidate every 60 minutes
-export const revalidate = 3600;
-export default async function Page() {
-  const now = new Date();
-  const oneDayAgo = subDays(now, 1);
-  const dailyReadiness = await getOuraDailyReadiness(oneDayAgo);
-
-  const readinessToday = dailyReadiness.at(-1);
-  const readinessYesterday = dailyReadiness.at(-2);
-  const readinessDifference = (readinessToday?.score ?? 0) - (readinessYesterday?.score ?? 0);
-
+export default function Page() {
   return (
     <div className="flex flex-col flex-grow gap-16 p-8 md:flex-row sm:p-16">
       <div className="sm:w-1/2">
@@ -81,32 +69,18 @@ export default async function Page() {
         <p className="text-xs">Software Developer</p>
       </div>
       <div className="relative flex flex-col sm:w-1/2">
-        <div className="relative z-20 border rounded-sm bg-white/5 border-white/5">
+        <div className="relative z-20 mt-5 border rounded-sm bg-white/5 border-white/5">
           <div className="flex p-5">
             <div className="flex flex-col w-full">
-              <p className="text-sm">Today&apos;s Readiness</p>
-              <p className="text-3xl font-medium">{readinessToday?.score} of 100</p>
+              <p className="text-sm">Latest project</p>
+              <p className="text-3xl font-medium">{projects[0].name}</p>
+              <p className="mt-1 text-sm text-slate-300">{projects[0].employmentType}</p>
             </div>
-            <div className="flex items-center gap-1 px-3 py-1 text-sm text-black bg-white rounded-full h-min">
-              {readinessDifference > 0 && <ArrowSmallUpIcon className="w-4 h-4 -ml-1" />}
-              {readinessDifference <= 0 && <ArrowSmallDownIcon className="w-4 h-4 -ml-1" />}
-              {readinessDifference}
-            </div>
-          </div>
-
-          <div className="p-5">
-            <CategoryBar
-              values={[60, 15, 15, 10]}
-              colors={["slate", "slate", "sky", "purple"]}
-              tooltip={readinessToday?.score.toString()}
-              markerValue={readinessToday?.score}
-              showLabels={true}
-            />
           </div>
 
           <div className="p-5 mt-5 border-t border-white/5">
-            <Link href="/sleep" className="flex items-center gap-1 text-xs hover:text-slate-300">
-              Based on my sleep data <ArrowSmallRightIcon className="w-4 h-4" />
+            <Link href="/projects" className="flex items-center gap-1 text-xs hover:text-slate-300">
+              See all projects <ArrowSmallRightIcon className="w-4 h-4" />
             </Link>
           </div>
         </div>
