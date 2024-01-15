@@ -16,9 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <nav className="flex items-center justify-center flex-grow gap-5">
                 <NavLink href="/">home.</NavLink>
                 <NavLink href="/projects">projects.</NavLink>
-                <NavLink href="/sleep">sleep.</NavLink>
                 <NavLink href="/books">books.</NavLink>
-                <NavLink href="/satellites">satellites.</NavLink>
               </nav>
               <div className="h-px -mb-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
             </header>
