@@ -1,4 +1,4 @@
-import { ArrowSmallRightIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 import { projects } from "./projects/_data/projects";
@@ -80,7 +80,7 @@ export default function Page() {
 
           <div className="p-5 mt-5 border-t border-white/5">
             <Link href="/projects" className="flex items-center gap-1 text-xs hover:text-slate-300">
-              See all projects <ArrowSmallRightIcon className="w-4 h-4" />
+              See all projects <ArrowRightIcon className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function Page() {
 
           <div className="p-5 mt-5 border-t border-white/5">
             <Link href="/books" className="flex items-center gap-1 text-xs hover:text-slate-300">
-              See my tier list <ArrowSmallRightIcon className="w-4 h-4" />
+              See my tier list <ArrowRightIcon className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
