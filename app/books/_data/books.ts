@@ -12,6 +12,11 @@ export interface Book {
 
 export const books: Book[] = [
   {
+    name: "Atomic Habits",
+    author: "James Clear",
+    tier: Tier.S,
+  },
+  {
     name: "Stillness is the Key",
     author: "Ryan Holiday",
     tier: Tier.S,
