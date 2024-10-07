@@ -14,7 +14,7 @@ export const projects: Project[] = [
     employmentType: "Hobby project",
     position: "Full-Stack Developer",
     yearsInPosition: "Current",
-    link: "https://permi.dk",
+    link: "https://www.permi.dk",
   },
   {
     name: "Gavemild",
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     employmentType: "Hobby project",
     position: "Full-Stack Developer",
     yearsInPosition: "Current",
-    link: "https://gavemild.dk",
+    link: "https://www.gavemild.dk",
   },
   {
     name: "Visma Dinero ApS",
@@ -33,12 +33,12 @@ export const projects: Project[] = [
     link: "https://dinero.dk",
   },
   {
-    name: "Besprout.io",
-    description: "Besprout.io provides inspiration and guidance for new and experienced vegans on where to get exciting vegan products.",
+    name: "Besprout.dk",
+    description: "Besprout.dk provides inspiration and guidance for new and experienced vegans on where to get vegan products.",
     employmentType: "Hobby project",
     position: "Full-Stack Developer & Owner",
     yearsInPosition: "Current",
-    link: "https://besprout.io",
+    link: "https://www.besprout.dk",
   },
   {
     name: "Storebuddy ApS",
