@@ -88,8 +88,8 @@ export default function Page() {
           <div className="flex p-5">
             <div className="flex flex-col w-full">
               <p className="text-sm">Currently Reading</p>
-              <p className="text-3xl font-medium">Less is More</p>
-              <p className="mt-1 text-sm text-slate-300">by Jason Hickel</p>
+              <p className="text-3xl font-medium">The Psychology of Money</p>
+              <p className="mt-1 text-sm text-slate-300">by Morgan Housel</p>
             </div>
           </div>
 
