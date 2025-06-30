@@ -3,7 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { AnalyticsWrapper } from "./_components/analytics";
 import { NavLink } from "./_components/nav-link";
 
-import "./globals.scss";
+import "./global.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,22 +12,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className="flex flex-col min-h-screen">
           <div className="w-full border-b border-white/10">
-            <header className="flex flex-col max-w-screen-xl px-8 mx-auto sm:px-16">
-              <nav className="flex items-center justify-center flex-grow gap-5">
+            <header className="flex flex-col max-w-(--breakpoint-xl) px-8 mx-auto sm:px-16">
+              <nav className="flex items-center justify-center gap-5 grow">
                 <NavLink href="/">home.</NavLink>
                 <NavLink href="/projects">projects.</NavLink>
                 <NavLink href="/books">books.</NavLink>
               </nav>
-              <div className="h-px -mb-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+              <div className="h-px -mb-px bg-linear-to-r from-transparent via-white/25 to-transparent"></div>
             </header>
           </div>
-          <div className="flex flex-col w-full max-w-screen-xl mx-auto">
-            <main className="flex flex-grow">
-              <div className="flex flex-col flex-grow">{children}</div>
+          <div className="flex flex-col w-full max-w-(--breakpoint-xl) mx-auto">
+            <main className="flex grow">
+              <div className="flex flex-col grow">{children}</div>
             </main>
           </div>
           <footer className="py-8 mt-auto bg-white/5">
-            <div className="flex flex-col items-center w-full max-w-screen-xl mx-auto sm:px-16 sm:flex-row">
+            <div className="flex flex-col items-center w-full max-w-(--breakpoint-xl) mx-auto sm:px-16 sm:flex-row">
               <div className="flex flex-col text-center sm:text-left">
                 <span className="text-sm font-bold">Pekkel</span>
                 <span className="text-xs font-medium">DK-37106666</span>

@@ -1,7 +1,7 @@
 import { ArrowRightIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-
 import { projects } from "./projects/_data/projects";
+
 import styles from "./signature.module.scss";
 
 export const metadata = {
@@ -12,9 +12,9 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="flex flex-col flex-grow gap-16 p-8 md:flex-row sm:p-16">
+    <div className="flex flex-col gap-16 p-8 grow md:flex-row sm:p-16">
       <div className="sm:w-1/2">
-        <p className="text-xl font-light leading-4 tracking-wider sm:text-4xl">Hi, my name is</p>
+        <p className="text-xl font-light tracking-wider sm:text-4xl">Hi, my name is</p>
         <h1 className="relative -ml-[2px] text-4xl font-extrabold sm:text-7xl w-min whitespace-nowrap text-white">
           <span className="relative z-20">Per Hansen</span>
           <svg
