@@ -7,7 +7,7 @@ import styles from "./signature.module.scss";
 export const metadata = {
   title: "Per Hansen",
   description:
-    "Hi, my name is Per Hansen. I'm a frontend developer and full-stack wannabe. I enjoy developing anything web and occasionally experiment with Arduino, Unity or really any technology i find interesting.",
+    "Hi, my name is Per Hansen. I'm a frontend developer and full-stack wannabe. I enjoy developing anything web and occasionally experiment with Arduino, Godot or really any technology i find interesting.",
 };
 
 export default function Page() {
@@ -28,7 +28,7 @@ export default function Page() {
         </h1>
         <p className="mt-10">
           I&apos;m a frontend developer and full-stack wannabe. I enjoy developing anything web and occasionally experiment with Arduino,
-          Unity or really any technology i find interesting.
+          Gotdot or really any technology i find interesting.
         </p>
         <div className="mt-3">
           <a href="mailto:hello@perhp.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-slate-300">
