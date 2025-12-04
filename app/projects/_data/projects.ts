@@ -9,6 +9,14 @@ interface Project {
 
 export const projects: Project[] = [
   {
+    name: "Clortal",
+    description: "Smart portals that elevate client relationships",
+    employmentType: "Hobby project",
+    position: "Developer",
+    yearsInPosition: "Current",
+    link: "https://www.clortal.com/",
+  },
+  {
     name: "Raspberry Stats",
     description:
       "A lightweight Node.js utility for gathering essential performance metrics from your Raspberry Pi—such as CPU temperature, memory usage, and more.",
