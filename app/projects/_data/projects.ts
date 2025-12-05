@@ -46,7 +46,7 @@ export const projects: Project[] = [
     description: "Visma Dinero ApS is an accounting system for entrepreneurs and small businesses.",
     employmentType: "Freelance",
     position: "Frontend Developer",
-    yearsInPosition: "Current",
+    yearsInPosition: "2 years",
     link: "https://dinero.dk",
   },
   {
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     description: "Besprout.dk provides inspiration and guidance for new and experienced vegans on where to get vegan products.",
     employmentType: "Hobby project",
     position: "Full-Stack Developer & Owner",
-    yearsInPosition: "Current",
+    yearsInPosition: "4 years",
     link: "https://www.besprout.dk",
   },
   {
