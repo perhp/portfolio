@@ -1,6 +1,6 @@
 export const site = {
   name: "Per Hansen",
-  role: "Senior freelance web developer",
+  role: "Senior freelance web & mobile developer",
   location: "Denmark · remote-friendly",
   email: "hello@perhp.com",
   url: "https://perhp.com",
@@ -32,7 +32,7 @@ export const mailto = (subject = "Project inquiry") => `mailto:${site.email}?sub
 export const hero = {
   badge: "Available for new projects",
   headline: ["The freelance developer", "clients keep for years."],
-  sub: "I'm Per Hansen, a full-stack developer from Denmark with 10+ years of experience shipping products for fintech, biotech, climate tech and SaaS companies. Most freelancers hand over and leave. My clients tend to bring me back, and I stay long after the first release.",
+  sub: "I'm Per Hansen, a full-stack developer from Denmark with 10+ years of experience shipping web and mobile products for fintech, biotech, climate tech and SaaS companies. Web apps, and iOS, iPadOS and Android apps built with Expo. Most freelancers hand over and leave. My clients tend to bring me back, and I stay long after the first release.",
   primaryCta: "Start a project",
   secondaryCta: "See the CV",
   ledger: {
@@ -45,6 +45,10 @@ export const services = [
   {
     title: "Web application development",
     text: "Full-stack web applications built with React, Next.js, Vue/Nuxt, Node.js and TypeScript. Customer portals, dashboards, SaaS products and internal tools, designed to be maintained, not just launched.",
+  },
+  {
+    title: "Mobile app development",
+    text: "Native-feeling iOS, iPadOS and Android apps built with Expo and React Native from a single TypeScript codebase. App Store and Google Play releases, over-the-air updates, push notifications and offline support, sharing code and APIs with your web app where it makes sense.",
   },
   {
     title: "Senior capacity for your team",
@@ -83,6 +87,8 @@ export const stack = [
   "TypeScript",
   "React",
   "Next.js",
+  "Expo / React Native",
+  "iOS, iPadOS & Android",
   "Vue",
   "Nuxt",
   "Angular",
@@ -203,7 +209,7 @@ export const process = [
 export const about = {
   title: "The person behind the code",
   paragraphs: [
-    "I'm Per, a developer from Denmark who has spent more than a decade building for the web. I have been an employee at a fintech company, a partner in a startup, and for the last several years a freelancer for accounting, biotech, climate tech and construction companies. That mix taught me that the best code is the code that solves the business problem and doesn't wake anyone up at night.",
+    "I'm Per, a developer from Denmark who has spent more than a decade building for the web and, more recently, for iOS, iPadOS and Android with Expo. I have been an employee at a fintech company, a partner in a startup, and for the last several years a freelancer for accounting, biotech, climate tech and construction companies. That mix taught me that the best code is the code that solves the business problem and doesn't wake anyone up at night.",
     "I don't start coding until we both agree on what the goal is and why it matters. Once we do, I move fast, I am honest when I think there is a better way, and I stick around after launch. I enjoy long-term partnerships most, but I don't shy away from smaller tasks either. If it is a two-day fix or a two-year engagement, you will get the same care.",
     "Outside of client work I build my own products, like Tiltiden and Ønsker.dk, and tinker with Arduino, Godot and whatever technology happens to catch my interest that month.",
   ],

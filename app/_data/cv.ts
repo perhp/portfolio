@@ -14,7 +14,7 @@ export interface CvEntry {
 
 export const cv = {
   summary:
-    "Senior full-stack web developer with more than ten years of experience building web applications for fintech, biotech, climate tech and construction companies. Comfortable owning a product end to end, from architecture and APIs to a polished frontend, and equally comfortable joining an existing team as extra senior capacity. Focused on maintainable code, clear communication and outcomes the business actually needs.",
+    "Senior full-stack web and mobile developer with more than ten years of experience building web applications, and iOS, iPadOS and Android apps with Expo, for fintech, biotech, climate tech and construction companies. Comfortable owning a product end to end, from architecture and APIs to a polished frontend, and equally comfortable joining an existing team as extra senior capacity. Focused on maintainable code, clear communication and outcomes the business actually needs.",
 
   // Most recent first.
   experience: [

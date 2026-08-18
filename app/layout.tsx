@@ -12,13 +12,13 @@ const display = Familjen_Grotesk({ subsets: ["latin"], variable: "--font-familje
 
 const title = `${site.name} | ${site.role}`;
 const description =
-  "Freelance full-stack web developer from Denmark with 10+ years of experience. React, Next.js, Vue, Node.js and TypeScript for fintech, biotech, climate tech and SaaS companies. Available for new projects.";
+  "Freelance full-stack web and mobile developer from Denmark with 10+ years of experience. React, Next.js, Expo (iOS, iPadOS, Android), Vue, Node.js and TypeScript for fintech, biotech, climate tech and SaaS companies. Available for new projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title,
   description,
-  keywords: ["freelance web developer", "Next.js developer", "React developer", "full-stack developer", "Denmark", "Per Hansen"],
+  keywords: ["freelance web developer", "Next.js developer", "React developer", "Expo developer", "React Native developer", "mobile app developer", "full-stack developer", "Denmark", "Per Hansen"],
   authors: [{ name: site.name, url: site.url }],
   alternates: { canonical: "/" },
   openGraph: {
