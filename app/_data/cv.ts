@@ -5,6 +5,8 @@ export interface CvEntry {
   role: string;
   type: string;
   period: string;
+  /** Length in years, drives the tenure bar. Omit for one-off projects. */
+  years?: number;
   location?: string;
   summary: string;
   highlights: string[];
@@ -21,6 +23,7 @@ export const cv = {
       role: "Full-Stack Developer",
       type: "Freelance",
       period: "2 years, ongoing",
+      years: 2,
       summary: "Life cycle assessment (LCA) company helping businesses understand the climate footprint of their products.",
       highlights: [
         "Helped build the LCA screening tool used by customers to estimate product footprints.",
@@ -43,6 +46,7 @@ export const cv = {
       role: "Frontend Developer",
       type: "Freelance",
       period: "2 years",
+      years: 2,
       summary: "One of Denmark's most popular accounting platforms for entrepreneurs and small businesses.",
       highlights: [
         "Returned as a freelancer after four years as an employee to continue frontend development on the core product.",
@@ -54,6 +58,7 @@ export const cv = {
       role: "Frontend Developer",
       type: "Freelance",
       period: "1 year",
+      years: 1,
       summary: "Automated bookkeeping for webshop owners.",
       highlights: [
         "Frontend for a platform that automates bookkeeping and flags imbalances on e-commerce orders.",
@@ -65,6 +70,7 @@ export const cv = {
       role: "Full-Stack Developer & Partner",
       type: "Full-time",
       period: "2 years",
+      years: 2,
       summary: "Esports platform with tournaments and a fantasy manager game.",
       highlights: [
         "Co-founded and co-built the platform from the ground up as a partner.",
@@ -76,6 +82,7 @@ export const cv = {
       role: "Frontend Developer",
       type: "Full-time",
       period: "4 years",
+      years: 4,
       summary: "Accounting platform for entrepreneurs and small businesses.",
       highlights: [
         "Frontend development on the core accounting product.",
@@ -87,6 +94,7 @@ export const cv = {
       role: "Full-Stack Developer",
       type: "Freelance",
       period: "3 years",
+      years: 3,
       summary: "Commercial-stage biopharmaceutical company.",
       highlights: [
         "Full-stack development of web solutions in a regulated environment.",

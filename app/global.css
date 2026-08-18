@@ -1,17 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent: #1e40af;
-  --color-accent-strong: #1e3a8a;
-  --color-accent-soft: #dbeafe;
-  --color-ink: #1c1917;
-  --color-ink-muted: #57534e;
-  --color-ink-faint: #a8a29e;
-  --color-line: #e7e5e4;
-  --color-canvas: #fafaf9;
+  /* Cool paper, deep navy ink, cobalt signal. */
+  --color-accent: #0f56d3;
+  --color-accent-strong: #0b45ab;
+  --color-accent-soft: #d9e6fb;
+  --color-ink: #0b1b33;
+  --color-ink-muted: #4a5872;
+  --color-ink-faint: #8c98ac;
+  --color-line: #d8dee8;
+  --color-line-strong: #b9c2d1;
+  --color-canvas: #f2f4f8;
   --color-surface: #ffffff;
 
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-display: var(--font-familjen), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-grow-x: grow-x 1s cubic-bezier(0.22, 1, 0.36, 1) both;
 
   @keyframes fade-up {
     from {
@@ -23,6 +30,15 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes grow-x {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 }
 
 html {
@@ -31,40 +47,62 @@ html {
 }
 
 body {
-  @apply bg-canvas text-ink antialiased;
+  @apply bg-canvas text-ink antialiased font-sans;
   overflow-y: scroll;
+  font-feature-settings: "ss01", "cv11";
 }
 
 ::selection {
-  @apply bg-accent-soft text-accent-strong;
+  @apply bg-accent text-white;
 }
 
 @utility container-x {
   @apply w-full max-w-6xl px-6 mx-auto sm:px-10;
 }
 
+/* Display type: Familjen Grotesk, tight and heavy. Used sparingly. */
+@utility display {
+  @apply font-display font-bold tracking-[-0.03em] leading-[0.95] text-ink;
+}
+
 @utility section-title {
-  @apply text-3xl font-semibold tracking-tight sm:text-4xl text-ink;
+  @apply display text-3xl sm:text-4xl text-balance;
 }
 
+/* Eyebrows and data labels are set in mono: they are metadata, not prose. */
 @utility eyebrow {
-  @apply text-xs font-semibold tracking-[0.18em] uppercase text-accent;
+  @apply font-mono text-[0.7rem] font-medium tracking-[0.14em] uppercase text-accent;
 }
 
-@utility card {
-  @apply border rounded-2xl bg-surface border-line;
+@utility meta {
+  @apply font-mono text-xs tracking-wide text-ink-faint;
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 px-5 font-medium transition-colors rounded-full h-11 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  @apply inline-flex items-center justify-center gap-2 px-5 font-medium transition-colors rounded-md h-11 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
 }
 
 @utility btn-primary {
-  @apply text-white bg-ink hover:bg-accent-strong;
+  @apply text-white bg-ink hover:bg-accent;
 }
 
 @utility btn-secondary {
-  @apply border text-ink border-line bg-surface hover:border-ink;
+  @apply border text-ink border-line-strong hover:border-ink hover:bg-surface;
+}
+
+@utility link-ul {
+  @apply underline underline-offset-4 decoration-line-strong transition-colors hover:decoration-accent hover:text-accent;
+}
+
+/* Keep colored bars when printing to PDF. */
+@utility print-exact {
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* Tenure bar: scales in from the left on load. */
+@utility bar {
+  @apply block h-2.5 origin-left rounded-xs bg-accent animate-grow-x;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -103,10 +141,13 @@ body {
     margin: 0 !important;
     width: auto;
     min-height: auto;
-    padding: 10mm 14mm;
+    padding: 7mm 14mm;
   }
   .a4 .cv-experience {
-    gap: 0.5rem;
+    gap: 0.35rem;
+  }
+  .a4 .cv-experience h3 {
+    line-height: 1.1;
   }
   .a4 .cv-experience li li {
     line-height: 1.3;

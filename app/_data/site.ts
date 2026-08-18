@@ -19,21 +19,26 @@ export const site = {
   ],
 } as const;
 
+export const slug = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 export const mailto = (subject = "Project inquiry") => `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
 
 export const hero = {
   badge: "Available for new projects",
-  headline: ["I build web apps", "your business can rely on."],
-  sub: "I'm Per Hansen, a freelance full-stack developer from Denmark with 10+ years of experience shipping products for fintech, biotech, climate tech and SaaS companies. From first commit to production, and everything after.",
+  headline: ["The freelance developer", "clients keep for years."],
+  sub: "I'm Per Hansen, a full-stack developer from Denmark with 10+ years of experience shipping products for fintech, biotech, climate tech and SaaS companies. Most freelancers hand over and leave. My clients tend to bring me back, and I stay long after the first release.",
   primaryCta: "Start a project",
-  secondaryCta: "Download CV",
-  proof: [
-    { value: "10+", label: "years building for the web" },
-    { value: "6", label: "years on one client's product" },
-    { value: "4", label: "long-term freelance engagements" },
-    { value: "1 day", label: "typical reply time" },
-  ],
-  trustedBy: ["Målbar", "Bunch Bygningsfysik", "Visma Dinero", "Y-mAbs", "Storebuddy", "eManager"],
+  secondaryCta: "See the CV",
+  ledger: {
+    title: "Years per client",
+    note: "Every engagement I can talk about, longest first.",
+  },
 };
 
 export const services = [
@@ -95,6 +100,8 @@ export interface WorkItem {
   role: string;
   engagement: string;
   duration: string;
+  /** Length of the engagement in years, used for the tenure ledger. Omit for one-off projects. */
+  years?: number;
   text: string;
   link?: string;
 }
@@ -106,6 +113,7 @@ export const work: WorkItem[] = [
     role: "Full-Stack Developer",
     engagement: "Freelance",
     duration: "2 years",
+    years: 2,
     text: "Ongoing development for a Danish life cycle assessment company. I have helped build their LCA screening tool, which lets companies estimate the climate footprint of their products, along with the internal tooling the team runs on every day.",
     link: "https://maalbar.dk",
   },
@@ -124,6 +132,7 @@ export const work: WorkItem[] = [
     role: "Frontend Developer",
     engagement: "Full-time, then freelance",
     duration: "6 years",
+    years: 6,
     text: "Frontend development on Dinero, one of Denmark's most popular accounting platforms for entrepreneurs and small businesses. First as an employee for four years, then they brought me back as a freelancer for two more.",
     link: "https://dinero.dk",
   },
@@ -133,6 +142,7 @@ export const work: WorkItem[] = [
     role: "Full-Stack Developer",
     engagement: "Freelance",
     duration: "3 years",
+    years: 3,
     text: "Full-stack development of web solutions for a commercial-stage biopharmaceutical company, a regulated environment where reliability, correctness and clear documentation are not optional.",
     link: "https://ymabs.com",
   },
@@ -142,6 +152,7 @@ export const work: WorkItem[] = [
     role: "Frontend Developer",
     engagement: "Freelance",
     duration: "1 year",
+    years: 1,
     text: "Frontend for a platform that automates bookkeeping for webshop owners and flags imbalances on orders, turning messy e-commerce data into something an accountant can trust.",
     link: "https://storebuddy.dk",
   },
@@ -151,6 +162,7 @@ export const work: WorkItem[] = [
     role: "Full-Stack Developer & Partner",
     engagement: "Full-time",
     duration: "2 years",
+    years: 2,
     text: "Co-built an esports tournament platform with a fantasy manager game from the ground up: product decisions, architecture and code, as a partner in the company.",
   },
 ];

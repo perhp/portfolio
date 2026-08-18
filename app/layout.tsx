@@ -1,10 +1,14 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import { Familjen_Grotesk } from "next/font/google";
 import { AnalyticsWrapper } from "./_components/analytics";
 import { site } from "./_data/site";
 
 import "./global.css";
+
+const display = Familjen_Grotesk({ subsets: ["latin"], variable: "--font-familjen", display: "swap" });
 
 const title = `${site.name} | ${site.role}`;
 const description =
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={GeistSans.className} lang="en">
+    <html className={`${GeistSans.variable} ${GeistMono.variable} ${display.variable}`} lang="en">
       <body>
         {children}
         <AnalyticsWrapper />

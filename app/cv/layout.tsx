@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function CvLayout({ children }: { children: React.ReactNode }) {
-  return <div className="min-h-screen bg-line/60 print:bg-white print:min-h-0">{children}</div>;
+  return <div className="min-h-screen bg-canvas print:bg-white print:min-h-0">{children}</div>;
 }

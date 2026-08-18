@@ -2,9 +2,9 @@ import { mailto, site } from "../_data/site";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b backdrop-blur-md bg-canvas/80 border-line">
+    <header className="sticky top-0 z-40 border-b backdrop-blur-md bg-canvas/85 border-line">
       <div className="flex items-center justify-between h-16 container-x">
-        <a href="#top" className="text-sm font-semibold tracking-tight">
+        <a href="#top" className="text-lg display">
           {site.name}
           <span className="text-accent">.</span>
         </a>
