@@ -152,6 +152,11 @@ export default function Page() {
             </li>
           ))}
         </ol>
+        <p className="mt-10 text-sm text-ink-muted">
+          <Link href="/process" className="link-ul">
+            Engagement models, what to expect each week and practical FAQs
+          </Link>
+        </p>
       </Section>
 
       <Section id="about" eyebrow="About" title={about.title}>
@@ -160,6 +165,11 @@ export default function Page() {
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
         </div>
+        <p className="mt-6 text-sm text-ink-muted">
+          <Link href="/about" className="link-ul">
+            More about me, my stack and my track record
+          </Link>
+        </p>
         <div className="max-w-xs mt-14">
           <Signature className="w-full text-ink" />
           <div className="pt-4 mt-2 border-t border-ink">

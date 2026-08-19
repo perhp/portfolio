@@ -18,6 +18,12 @@ export function Footer() {
           <Link href="/work" className="transition-colors hover:text-ink">
             Work
           </Link>
+          <Link href="/process" className="transition-colors hover:text-ink">
+            Process
+          </Link>
+          <Link href="/about" className="transition-colors hover:text-ink">
+            About
+          </Link>
           <Link href={site.cvPath} className="transition-colors hover:text-ink">
             CV
           </Link>

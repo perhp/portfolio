@@ -21,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industries.map((p) => entry(`/industries/${p.slug}`, 0.8)),
     entry("/work", 0.8),
     ...cases.map((c) => entry(`/work/${caseSlug(c.client)}`, 0.7)),
+    entry("/process", 0.6),
+    entry("/about", 0.6),
     entry("/cv", 0.6),
   ];
 }
