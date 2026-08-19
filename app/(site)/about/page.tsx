@@ -62,7 +62,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section id="top" className="border-b border-line">
-        <div className="grid gap-14 pt-14 pb-16 container-x sm:pt-20 sm:pb-24 lg:grid-cols-12 lg:gap-12 lg:items-end">
+        <div className="grid gap-14 pt-14 pb-16 container-x sm:pt-20 sm:pb-24 lg:grid-cols-12 lg:gap-12 lg:items-center">
           <div className="lg:col-span-7">
             <nav aria-label="Breadcrumb" className="animate-fade-up meta">
               <ol className="flex flex-wrap items-center gap-x-2">
