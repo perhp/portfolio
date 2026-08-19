@@ -12,6 +12,9 @@ export function Footer() {
           <Link href="/services" className="transition-colors hover:text-ink">
             Services
           </Link>
+          <Link href="/industries" className="transition-colors hover:text-ink">
+            Industries
+          </Link>
           <Link href={site.cvPath} className="transition-colors hover:text-ink">
             CV
           </Link>

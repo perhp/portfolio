@@ -1,6 +1,7 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Hero } from "../_components/hero";
+import { industries } from "../_data/industries";
 import { landingPages } from "../_data/landing";
 import { Section } from "../_components/section";
 import { Ledger } from "../_components/ledger";
@@ -70,6 +71,18 @@ export default function Page() {
         title="Clients I've built for"
         intro="Long-term engagements in industries where mistakes are expensive. Here is a selection of the work I can talk about."
       >
+        <div className="pb-8 mb-8 border-b border-line">
+          <p className="eyebrow">By industry</p>
+          <ul className="flex flex-wrap mt-4 gap-x-6 gap-y-2 text-sm text-ink-muted">
+            {industries.map((i) => (
+              <li key={i.slug}>
+                <Link href={`/industries/${i.slug}`} className="transition-colors hover:text-ink">
+                  {i.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <Ledger className="mb-14" />
         <ol className="border-t divide-y border-ink divide-line">
           {work.map((w) => (
