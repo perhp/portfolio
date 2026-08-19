@@ -62,25 +62,26 @@ export const cases: CaseStudy[] = [
   },
   {
     client: "Bunch Bygningsfysik",
-    title: "Bunch Bygningsfysik case study | Moisture calculator web app",
+    title: "Bunch Bygningsfysik case study | Five years on a building physics calculator",
     description:
-      "How I built a moisture content calculator for construction compositions for Bunch Bygningsfysik, keeping their proven calculation engine and putting a modern, easy to use web UI on top.",
+      "Since 2021 I have built and kept developing a moisture content calculator for construction compositions for Bunch Bygningsfysik, keeping their proven calculation engine and putting a modern web UI on top.",
     keywords: ["Bunch Bygningsfysik", "moisture calculator web app", "building physics software", "web UI on legacy calculation engine", "construction tech case study"],
-    tagline: "A modern web UI on top of a proven building physics engine.",
+    tagline: "Five years and counting on a web UI for a proven building physics engine.",
     context:
-      "Bunch Bygningsfysik is a Danish building physics consultancy. They had a calculation module for moisture content in construction compositions with years of expertise baked into it. The logic was trusted. The way people had to use it was not.",
+      "Bunch Bygningsfysik is a Danish building physics consultancy. They had a calculation module for moisture content in construction compositions with years of expertise baked into it. The logic was trusted. The way people had to use it was not. I came in in 2021 and have been their developer since.",
     brief:
-      "Make the calculator usable by customers and colleagues through a modern web application, without risking the correctness of the calculations. The obvious shortcut, rewriting everything from scratch, would have thrown away the most valuable part.",
+      "Make the calculator usable by customers and colleagues through a modern web application, without risking the correctness of the calculations, and then keep it moving as their needs and their customers' needs changed. The obvious shortcut, rewriting everything from scratch, would have thrown away the most valuable part.",
     built: [
       "A web-based moisture content calculator for construction compositions, used through app.matchlab.io.",
       "Kept the existing, proven calculation module as the engine instead of rewriting it.",
       "A clean input flow for compositions, materials and parameters, with results that update as you work.",
       "Validation, clear presentation of results and the plumbing between the new UI and the legacy engine.",
+      "Ongoing development and maintenance since 2021: new features, upgrades and fixes as the tool and its users have grown.",
     ],
     approach:
-      "A fixed-scope project. We agreed on the goal first: better access to the calculator, not a new calculator. I treated the existing module as a black box with a contract, wrapped it, and spent the effort on the interface and the edge cases users would hit. Short iterations and early demos meant the building physics experts could correct me before anything was expensive to change.",
+      "It started as a clearly scoped build and turned into a long-term engagement. We agreed on the goal first: better access to the calculator, not a new calculator. I treated the existing module as a black box with a contract, wrapped it, and spent the effort on the interface and the edge cases users would hit. Short iterations and early demos meant the building physics experts could correct me before anything was expensive to change, and that rhythm has continued through years of further development.",
     outcome:
-      "The calculator is live and in use, and the expertise in the original module is intact. For me it is the clearest example of a principle I follow everywhere: keep what works, modernise what does not, and do not confuse the two.",
+      "The calculator is live, in use and still evolving, and the expertise in the original module is intact. Five years on, Bunch Bygningsfysik is one of my longest engagements. It is the clearest example of a principle I follow everywhere: keep what works, modernise what does not, and do not confuse the two.",
     stack: ["TypeScript", "Web frontend", "REST API", "Legacy calculation engine"],
     industry: "construction-tech",
     services: ["legacy-frontend-modernisation", "web-app-developer"],

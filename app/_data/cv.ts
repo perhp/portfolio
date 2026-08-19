@@ -34,11 +34,12 @@ export const cv = {
       company: "Bunch Bygningsfysik",
       role: "Full-Stack Developer",
       type: "Freelance",
-      period: "Project",
+      period: "2021 - present, 5 years",
+      years: 5,
       summary: "Building physics consultancy.",
       highlights: [
-        "Built a moisture content calculator for construction compositions.",
-        "Reused their proven legacy calculation module as the engine and delivered a modern web UI on top of it.",
+        "Built and continue to develop a moisture content calculator for construction compositions.",
+        "Reused their proven legacy calculation module as the engine and delivered a modern web UI on top of it, then kept extending it over the years.",
       ],
     },
     {

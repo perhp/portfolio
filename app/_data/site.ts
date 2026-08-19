@@ -134,8 +134,9 @@ export const work: WorkItem[] = [
     industry: "Construction · Building physics",
     role: "Full-Stack Developer",
     engagement: "Freelance",
-    duration: "Project",
-    text: "Built a moisture content calculator for construction compositions. Their existing calculation module already had years of building physics expertise baked in, so I kept it as the engine and put a modern, easy to use web UI on top of it instead of rewriting what worked.",
+    duration: "5 years",
+    years: 5,
+    text: "Ongoing development since 2021 for a Danish building physics consultancy. I built their moisture content calculator for construction compositions, keeping the existing calculation module with years of expertise baked in as the engine and putting a modern, easy to use web UI on top, and I have kept developing and maintaining it since.",
     link: "https://app.matchlab.io",
   },
   {

@@ -21,7 +21,7 @@
 - Rescue, upgrade or stabilise a codebase nobody wants to touch.
 **Use cases:**
 - LCA screening tool and internal tooling for a climate-tech company (Målbar, 2 years, ongoing).
-- Web calculator UI on top of a proven legacy calculation engine (Bunch Bygningsfysik).
+- Web calculator UI on top of a proven legacy calculation engine (Bunch Bygningsfysik, 2021 to present, 5 years, ongoing).
 - Frontend feature work in a large mature accounting SaaS (Visma Dinero, 6 years incl. employment).
 - Full-stack web solutions in a regulated pharma environment (Y-mAbs, 3 years).
 - Fintech / e-commerce bookkeeping frontend (Storebuddy, 1 year).
@@ -52,7 +52,7 @@
 
 ## Differentiation
 **Key differentiators:**
-- Proven tenure: clients keep him 1-6 years (Dinero 6, Y-mAbs 3, Målbar 2 ongoing, eManager 2).
+- Proven tenure: clients keep him 1-6 years (Dinero 6, Bunch Bygningsfysik 5 ongoing, Y-mAbs 3, Målbar 2 ongoing, eManager 2).
 - Web + mobile from one TypeScript codebase (Next.js + Expo), including App Store / Play releases, OTA updates, push, offline.
 - Experience in regulated and data-heavy domains (pharma, accounting, LCA, fintech).
 - Runs own products (Tiltiden booking system, Ønsker.dk) so understands the business side.
@@ -103,7 +103,7 @@
 **Personality:** Honest, senior, dependable, business-minded, unhurried.
 
 ## Proof Points
-**Metrics:** 10+ years experience; clients kept 1-6 years (Dinero 6, Y-mAbs 3, Målbar 2 ongoing, eManager 2, Storebuddy 1); replies within a day; free 30-minute intro call.
+**Metrics:** 10+ years experience; clients kept 1-6 years (Dinero 6, Bunch Bygningsfysik 5 ongoing, Y-mAbs 3, Målbar 2 ongoing, eManager 2, Storebuddy 1); replies within a day; free 30-minute intro call.
 **Customers:** Målbar, Bunch Bygningsfysik, Visma Dinero, Y-mAbs Therapeutics, Storebuddy, eManager.
 **Testimonials:**
 > (none yet; collect 3-6 in Q1)

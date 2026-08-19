@@ -335,10 +335,10 @@ export const industries: IndustryPage[] = [
     intent: "Developer for construction and building physics software",
     title: "Construction Tech Developer | Calculators & Engineering Tools",
     description:
-      "Freelance full-stack developer for construction and engineering software. Built a moisture calculator for Bunch Bygningsfysik on top of their proven engine. Web UIs for complex calculations.",
+      "Freelance full-stack developer for construction and engineering software. Five years building and developing a moisture calculator for Bunch Bygningsfysik on top of their proven engine. Web UIs for complex calculations.",
     keywords: ["construction tech developer", "building physics software developer", "engineering calculator web app", "construction software freelance developer", "web UI for calculation engine"],
     headline: ["Engineering calculators", "your customers can actually use."],
-    sub: "For Bunch Bygningsfysik I built a moisture content calculator for construction compositions. Their calculation module already had years of building physics expertise baked in, so I kept it as the engine and put a modern, easy to use web UI on top instead of rewriting what worked. That is the shape of most construction tech work: deep domain logic that deserves a better interface.",
+    sub: "Since 2021 I have been the developer behind Bunch Bygningsfysik's moisture content calculator for construction compositions. Their calculation module already had years of building physics expertise baked in, so I kept it as the engine and put a modern, easy to use web UI on top instead of rewriting what worked. That is the shape of most construction tech work: deep domain logic that deserves a better interface.",
     fit: [
       "You are a construction, engineering or building physics company with a calculation tool, spreadsheet or legacy app that needs a modern web UI.",
       "You build software for architects, engineers, contractors or building owners and need a developer who respects the domain logic.",
@@ -373,7 +373,7 @@ export const industries: IndustryPage[] = [
     faqs: [
       {
         q: "What have you built in construction tech?",
-        a: "A moisture content calculator for construction compositions for Bunch Bygningsfysik. Their existing calculation module stayed as the engine, and I built a modern web application on top of it so their customers can use it without a specialist in the room.",
+        a: "A moisture content calculator for construction compositions for Bunch Bygningsfysik, which I have built and kept developing since 2021. Their existing calculation module stayed as the engine, and I built a modern web application on top of it so their customers can use it without a specialist in the room.",
       },
       {
         q: "Can you work with our existing calculation code or spreadsheets?",
