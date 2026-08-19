@@ -107,7 +107,12 @@ export default function Page() {
                     {w.role} · {w.engagement}
                   </p>
                 </div>
-                <p className="leading-relaxed text-ink-muted">{w.text}</p>
+                <div>
+                  <p className="leading-relaxed text-ink-muted">{w.text}</p>
+                  <Link href={`/work/${slug(w.client)}`} className="inline-flex items-center gap-1 mt-3 text-sm font-medium link-ul">
+                    Read the case study <ArrowRightIcon className="w-3.5 h-3.5" aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
             </li>
           ))}

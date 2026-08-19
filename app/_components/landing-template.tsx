@@ -215,14 +215,19 @@ export function LandingTemplate({ page, basePath, indexLabel, proof, related, cr
                     {w.role} · {w.engagement}
                   </p>
                 </div>
-                <p className="leading-relaxed text-ink-muted">{w.text}</p>
+                <div>
+                  <p className="leading-relaxed text-ink-muted">{w.text}</p>
+                  <Link href={`/work/${slugify(w.client)}`} className="inline-flex items-center gap-1 mt-3 text-sm font-medium link-ul">
+                    Read the case study <ArrowRightIcon className="w-3.5 h-3.5" aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
             </li>
           ))}
         </ol>
         <p className="mt-6 text-sm text-ink-muted">
-          <Link href={`/#work-${slugify(proof[0]?.client ?? "")}`} className="link-ul">
-            See all clients and the full tenure ledger
+          <Link href="/work" className="link-ul">
+            See all case studies and the full tenure ledger
           </Link>
         </p>
       </Section>

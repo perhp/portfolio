@@ -14,7 +14,7 @@ export const site = {
   nav: [
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
-    { label: "Work", href: "/#work" },
+    { label: "Work", href: "/work" },
     { label: "Process", href: "/#process" },
     { label: "About", href: "/#about" },
   ],
