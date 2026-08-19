@@ -1,5 +1,7 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 import { Hero } from "../_components/hero";
+import { landingPages } from "../_data/landing";
 import { Section } from "../_components/section";
 import { Ledger } from "../_components/ledger";
 import { Signature } from "../_components/signature";
@@ -20,10 +22,27 @@ export default function Page() {
           {services.map((s) => (
             <div key={s.title} className="grid gap-3 py-8 sm:grid-cols-[minmax(0,14rem)_1fr] sm:gap-10">
               <dt className="text-xl display">{s.title}</dt>
-              <dd className="leading-relaxed text-ink-muted">{s.text}</dd>
+              <dd className="leading-relaxed text-ink-muted">
+                {s.text}{" "}
+                <Link href={s.href} className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap text-ink link-ul">
+                  Read more <ArrowRightIcon className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
+              </dd>
             </div>
           ))}
         </dl>
+        <div className="pt-8 mt-4 border-t border-line">
+          <p className="eyebrow">Looking for something specific?</p>
+          <ul className="flex flex-wrap mt-4 gap-x-6 gap-y-2 text-sm text-ink-muted">
+            {landingPages.map((p) => (
+              <li key={p.slug}>
+                <Link href={`/services/${p.slug}`} className="transition-colors hover:text-ink">
+                  {p.intent}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
       <Section id="why" eyebrow="Why me" title="What you get when you hire me">

@@ -13,4 +13,6 @@ bun dev
 
 All copy lives in `app/_data/site.ts`: hero, services, work, process, about and contact. Sections are composed in `app/(site)/page.tsx`; shared UI in `app/_components/`.
 
+SEO landing pages live under `/services/<slug>` and are generated from `app/_data/landing.ts` (one entry per search intent: title, meta description, headline, fit / not-fit lists, deliverables, proof clients, FAQs, related pages). The template is `app/(site)/services/[slug]/page.tsx`; `/services` lists them all. Adding an entry to `landingPages` is enough to get a new page, sitemap entry, JSON-LD (Service, FAQPage, BreadcrumbList) and a homepage link. Positioning and copy rules are in `.agents/product-marketing.md`.
+
 The CV at `/cv` is generated from `app/_data/cv.ts` and styled as a printable A4 page (use the browser print dialog to save as PDF). Toggle `site.available` to hide the availability badge.

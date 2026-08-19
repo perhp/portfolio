@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "../_data/site";
 
 export function Footer() {
@@ -7,7 +8,13 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {site.name} · {site.company.name} · CVR {site.company.cvr}
         </p>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-6">
+          <Link href="/services" className="transition-colors hover:text-ink">
+            Services
+          </Link>
+          <Link href={site.cvPath} className="transition-colors hover:text-ink">
+            CV
+          </Link>
           <a href={`mailto:${site.email}`} className="transition-colors hover:text-ink">
             {site.email}
           </a>

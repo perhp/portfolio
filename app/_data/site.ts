@@ -12,10 +12,10 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/per-hansen-38498711a/",
   },
   nav: [
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "Process", href: "#process" },
-    { label: "About", href: "#about" },
+    { label: "Services", href: "/services" },
+    { label: "Work", href: "/#work" },
+    { label: "Process", href: "/#process" },
+    { label: "About", href: "/#about" },
   ],
 } as const;
 
@@ -44,22 +44,27 @@ export const hero = {
 export const services = [
   {
     title: "Web application development",
+    href: "/services/web-app-developer",
     text: "Full-stack web applications built with React, Next.js, Vue/Nuxt, Node.js and TypeScript. Customer portals, dashboards, SaaS products and internal tools, designed to be maintained, not just launched.",
   },
   {
     title: "Mobile app development",
+    href: "/services/hire-react-native-developer",
     text: "Native-feeling iOS, iPadOS and Android apps built with Expo and React Native from a single TypeScript codebase. App Store and Google Play releases, over-the-air updates, push notifications and offline support, sharing code and APIs with your web app where it makes sense.",
   },
   {
     title: "Senior capacity for your team",
+    href: "/services/senior-frontend-contractor",
     text: "Need an experienced developer who can hit the ground running? I plug into your existing team, ship features, review code and raise the bar, without weeks of onboarding.",
   },
   {
     title: "APIs & integrations",
+    href: "/services/api-development-integrations",
     text: "REST APIs, database design and third-party integrations such as payments, accounting and authentication. The plumbing that makes your product actually work.",
   },
   {
     title: "Modernisation & rescue",
+    href: "/services/legacy-frontend-modernisation",
     text: "Inherited a codebase nobody wants to touch? I upgrade legacy frontends, fix performance problems and get releases flowing again, with a plan and no drama.",
   },
 ];
