@@ -347,7 +347,7 @@ export const landingPages: LandingPage[] = [
       },
       {
         q: "Do you have a CV I can forward?",
-        a: "Yes, a printable CV is at perhp.com/cv. It covers the stack, every engagement with years, and contact details. Recruiters and agencies are welcome to forward it.",
+        a: "Yes, a printable CV is at perhp.com/cv. It covers the stack, every engagement with years, and contact details. Recruiters and agencies are welcome to forward it, and perhp.com/for-recruiters has everything needed to qualify me for a role on one page.",
       },
       {
         q: "Which tools and workflows are you used to?",

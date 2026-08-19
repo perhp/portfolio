@@ -17,4 +17,6 @@ SEO landing pages live under `/services/<slug>` and are generated from `app/_dat
 
 `/process` and `/about` are standalone pages (`app/(site)/process/page.tsx`, `app/(site)/about/page.tsx`) that reuse the `process`, `reasons`, `about`, `stack` and `products` data from `site.ts`; the homepage keeps short versions of both sections. Every main nav item is a real route.
 
+`/for-recruiters` (`app/(site)/for-recruiters/page.tsx`) is the recruiter / staffing-agency landing page: profile facts, fit filter, ATS keywords from `cv.ts`, tenure ledger and FAQs. The CV is indexable and linked from it.
+
 The CV at `/cv` is generated from `app/_data/cv.ts` and styled as a printable A4 page (use the browser print dialog to save as PDF). Toggle `site.available` to hide the availability badge.

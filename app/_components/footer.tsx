@@ -24,6 +24,9 @@ export function Footer() {
           <Link href="/about" className="transition-colors hover:text-ink">
             About
           </Link>
+          <Link href="/for-recruiters" className="transition-colors hover:text-ink">
+            For recruiters
+          </Link>
           <Link href={site.cvPath} className="transition-colors hover:text-ink">
             CV
           </Link>

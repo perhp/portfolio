@@ -21,9 +21,14 @@ export default function CvPage() {
   return (
     <div className="flex flex-col items-center gap-6 px-4 py-8 sm:py-12 print:p-0 print:gap-0">
       <div className="flex items-center justify-between w-full max-w-[210mm] print:hidden">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm transition-colors text-ink-muted hover:text-ink">
-          <ArrowLeftIcon className="w-4 h-4" /> Back to site
-        </Link>
+        <div className="flex items-center gap-5 text-sm text-ink-muted">
+          <Link href="/" className="inline-flex items-center gap-2 transition-colors hover:text-ink">
+            <ArrowLeftIcon className="w-4 h-4" /> Back to site
+          </Link>
+          <Link href="/for-recruiters" className="transition-colors hover:text-ink">
+            For recruiters
+          </Link>
+        </div>
         <PrintButton />
       </div>
 
