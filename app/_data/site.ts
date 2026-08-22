@@ -3,7 +3,7 @@ export const site = {
   role: "Senior freelance web & mobile developer",
   location: "Denmark · remote-friendly",
   email: "hello@perhp.com",
-  url: "https://perhp.com",
+  url: "https://www.perhp.com",
   company: { name: "Pekkel", cvr: "DK-37106666" },
   cvPath: "/cv",
   available: true,
@@ -19,6 +19,9 @@ export const site = {
     { label: "About", href: "/about" },
   ],
 } as const;
+
+/** ISO date of the last site-wide content/metadata change. Bump when copy changes; per-page `updated` fields override it. */
+export const contentUpdated = "2026-08-22";
 
 export const slug = (s: string) =>
   s
@@ -52,6 +55,11 @@ export const services = [
     title: "Mobile app development",
     href: "/services/hire-react-native-developer",
     text: "Native-feeling iOS, iPadOS and Android apps built with Expo and React Native from a single TypeScript codebase. App Store and Google Play releases, over-the-air updates, push notifications and offline support, sharing code and APIs with your web app where it makes sense.",
+  },
+  {
+    title: "MVP development",
+    href: "/services/mvp-development",
+    text: "A first version built by a senior developer instead of an agency's juniors. Next.js, Expo and Node.js, working software early, a weekly written update, and someone who stays for the versions after the first.",
   },
   {
     title: "Senior capacity for your team",

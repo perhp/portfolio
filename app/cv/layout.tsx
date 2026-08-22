@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { site } from "../_data/site";
 
 const title = `CV | ${site.name}, ${site.role.toLowerCase()}`;
-const description = `Printable CV for ${site.name}, senior freelance web and mobile developer based in Denmark. 10+ years with React, Next.js, Vue, Expo / React Native, Node.js and TypeScript. Every engagement with years, stack, languages and contact details.`;
+const description = `Printable CV for ${site.name}, senior freelance web and mobile developer in Denmark. 10+ years with React, Next.js, Vue, Expo, Node.js and TypeScript.`;
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/cv" },
   openGraph: { type: "profile", url: "/cv", title, description, siteName: site.name, locale: "en_US" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
   robots: { index: true, follow: true },
 };
 

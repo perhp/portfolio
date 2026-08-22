@@ -14,6 +14,8 @@ const columns: { title: string; links: FooterLink[] }[] = [
       { label: "Services", href: "/services" },
       { label: "Industries", href: "/industries" },
       { label: "Work", href: "/work" },
+      { label: "MVP development", href: "/services/mvp-development" },
+      { label: "Freelance developer in Denmark", href: "/services/freelance-web-developer-denmark" },
     ],
   },
   {

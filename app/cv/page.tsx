@@ -1,6 +1,7 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { cv } from "../_data/cv";
+import { jsonLdGraph, personJsonLd } from "../_data/schema";
 import { PrintButton } from "./print-button";
 
 const { site } = cv;
@@ -20,6 +21,14 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 export default function CvPage() {
   return (
     <div className="flex flex-col items-center gap-6 px-4 py-8 sm:py-12 print:p-0 print:gap-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            jsonLdGraph({ "@type": "ProfilePage", "@id": `${site.url}/cv#page`, url: `${site.url}/cv`, name: `CV | ${site.name}`, mainEntity: { "@id": personJsonLd["@id"] } }, personJsonLd),
+          ),
+        }}
+      />
       <div className="flex items-center justify-between w-full max-w-[210mm] print:hidden">
         <div className="flex items-center gap-5 text-sm text-ink-muted">
           <Link href="/" className="inline-flex items-center gap-2 transition-colors hover:text-ink">

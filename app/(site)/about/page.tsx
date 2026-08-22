@@ -8,14 +8,14 @@ import { about, mailto, products, reasons, site, stack } from "../../_data/site"
 
 const title = `About | ${site.name}, ${site.role.toLowerCase()}`;
 const description =
-  "I'm Per Hansen, a freelance full-stack web and mobile developer from Denmark with 10+ years of experience. Former fintech employee, startup partner, and for years a freelancer clients keep for one to six years.";
+  "I'm Per Hansen, a freelance full-stack web and mobile developer from Denmark, 10+ years. Former fintech employee, startup partner, a freelancer clients keep.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/about" },
   openGraph: { type: "profile", url: "/about", title, description, siteName: site.name, locale: "en_US" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const facts = [

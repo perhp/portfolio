@@ -6,16 +6,16 @@ import { Section } from "../../_components/section";
 import { cv } from "../../_data/cv";
 import { mailto, site, stack } from "../../_data/site";
 
-const title = `For recruiters | Senior React, Next.js & Expo contractor, EU timezone | ${site.name}`;
+const title = `For recruiters | Senior React & Expo contractor | ${site.name}`;
 const description =
-  "Placing a senior React, Next.js, Vue or Expo contractor? Per Hansen: 10+ years, clients kept him 1-6 years, remote from Denmark, EU timezone, Danish company invoicing. Printable CV, stack and availability on one page.";
+  "Placing a senior React, Next.js, Vue or Expo contractor? Per Hansen: 10+ years, clients kept him 1-6 years, remote from Denmark, Danish invoicing. Printable CV.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/for-recruiters" },
   openGraph: { type: "profile", url: "/for-recruiters", title, description, siteName: site.name, locale: "en_US" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const subject = "Contract role: [client / role / start date]";

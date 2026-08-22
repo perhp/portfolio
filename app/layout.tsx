@@ -12,7 +12,7 @@ const display = Familjen_Grotesk({ subsets: ["latin"], variable: "--font-familje
 
 const title = `${site.name} | ${site.role}`;
 const description =
-  "Freelance full-stack web and mobile developer from Denmark with 10+ years of experience. React, Next.js, Expo (iOS, iPadOS, Android), Vue, Node.js and TypeScript for fintech, biotech, climate tech and SaaS companies. Available for new projects.";
+  "Senior freelance web and mobile developer in Denmark. React, Next.js, Expo, Node.js and TypeScript for fintech, biotech, climate tech and SaaS. Available now.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_US",
   },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
   robots: { index: true, follow: true },
 };
 

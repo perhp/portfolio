@@ -7,14 +7,14 @@ import { mailto, process, site } from "../../_data/site";
 
 const title = `Process | How we'll work together | ${site.name}`;
 const description =
-  "How I work with clients: a free intro call, a short written proposal, short iterations with a weekly update, and support after launch. Fixed price, hourly or retainer. Simple, predictable and transparent.";
+  "How I work with clients: a free intro call, a short written proposal, short iterations with a weekly update, and support after launch. Fixed price or retainer.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/process" },
   openGraph: { type: "website", url: "/process", title, description, siteName: site.name, locale: "en_US" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const models = [

@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     keywords: [...c.keywords],
     alternates: { canonical: url },
     openGraph: { type: "article", url, title, description: c.description, siteName: site.name, locale: "en_US" },
-    twitter: { card: "summary", title, description: c.description },
+    twitter: { card: "summary_large_image", title, description: c.description },
     robots: { index: true, follow: true },
   };
 }

@@ -35,6 +35,8 @@ export interface LandingPage {
   faqs: Faq[];
   /** Slugs of related landing pages. */
   related: string[];
+  /** ISO date the page content last changed; falls back to contentUpdated in site.ts. */
+  updated?: string;
 }
 
 const sharedFaqs = {
@@ -69,9 +71,9 @@ export const landingPages: LandingPage[] = [
     slug: "freelance-nextjs-developer",
     label: "Next.js developer",
     intent: "Freelance Next.js developer",
-    title: "Freelance Next.js Developer | Senior, EU timezone",
+    title: "Freelance Next.js Developer, EU timezone",
     description:
-      "Hire a senior freelance Next.js developer with 10+ years of experience. App Router, React Server Components, TypeScript and Vercel, for fintech, SaaS and climate tech companies.",
+      "Hire a senior freelance Next.js developer, 10+ years. App Router, Server Components, TypeScript and Vercel for fintech, SaaS and climate tech companies.",
     keywords: ["freelance Next.js developer", "hire Next.js developer", "Next.js contractor", "Next.js freelancer Europe", "senior Next.js developer"],
     headline: ["A freelance Next.js developer", "who stays after the launch."],
     sub: "I build and maintain production Next.js applications for product companies and funded startups: customer portals, dashboards, SaaS products and marketing sites that have to hold up under real traffic. TypeScript throughout, deployed on Vercel or your own infrastructure.",
@@ -128,7 +130,7 @@ export const landingPages: LandingPage[] = [
     intent: "Freelance React developer",
     title: "Freelance React Developer | Senior, 10+ Years",
     description:
-      "Senior freelance React developer for product companies. React, TypeScript, Next.js and React Native, with clients in fintech, biotech and climate tech who kept me for years.",
+      "Senior freelance React developer for product companies. React, TypeScript, Next.js, React Native. Fintech, biotech and climate tech clients kept me for years.",
     keywords: ["freelance React developer", "hire React developer", "React contractor", "senior React developer Europe", "React TypeScript freelancer"],
     headline: ["A senior React developer", "your team will want to keep."],
     sub: "I have written React for most of a decade, in a large accounting SaaS, in a regulated pharma environment and in startups shipping their first product. I write the kind of React that is still easy to change two years later: typed, tested where it matters, and boring in the good way.",
@@ -183,9 +185,9 @@ export const landingPages: LandingPage[] = [
     slug: "hire-react-native-developer",
     label: "React Native / Expo developer",
     intent: "Hire a React Native developer",
-    title: "Hire a React Native Developer | Expo, iOS & Android",
+    title: "Hire a React Native & Expo Developer",
     description:
-      "Freelance React Native and Expo developer. iOS, iPadOS and Android apps from one TypeScript codebase, App Store and Google Play releases, sharing code and APIs with your web app.",
+      "Freelance React Native and Expo developer. iOS, iPadOS and Android apps from one TypeScript codebase, store releases, and code shared with your web app.",
     keywords: ["hire React Native developer", "freelance Expo developer", "React Native contractor", "Expo app developer", "iOS Android app developer freelance"],
     headline: ["One codebase for iOS, Android", "and the web you already have."],
     sub: "I build mobile apps with Expo and React Native for companies that already have a web product, or are about to. One TypeScript codebase, native-feeling apps on iOS, iPadOS and Android, and the same APIs and business logic your web app uses. Released to the App Store and Google Play, updated over the air.",
@@ -245,7 +247,7 @@ export const landingPages: LandingPage[] = [
     intent: "Web app developer for hire",
     title: "Web App Developer for Hire | Full-Stack, Senior",
     description:
-      "Senior full-stack web app developer for hire. Customer portals, dashboards, SaaS products and internal tools in React, Next.js, Vue, Node.js and TypeScript. From Denmark, remote.",
+      "Senior full-stack web app developer for hire. Portals, dashboards, SaaS and internal tools in React, Next.js, Vue, Node.js and TypeScript. Remote from Denmark.",
     keywords: ["web app developer for hire", "hire web application developer", "full-stack developer freelance", "custom web application development", "SaaS developer freelance"],
     headline: ["A web app developer", "who treats your product like his own."],
     sub: "I build web applications for companies that need more than a website: customer portals, admin dashboards, SaaS products, calculators and internal tools. Full-stack, from database to UI, designed to be maintained for years rather than launched and forgotten.",
@@ -303,9 +305,9 @@ export const landingPages: LandingPage[] = [
     slug: "senior-frontend-contractor",
     label: "Senior frontend contractor",
     intent: "Senior frontend contractor",
-    title: "Senior Frontend Contractor | React, Next.js, Vue",
+    title: "Senior Frontend Contractor | React, Next.js",
     description:
-      "Senior frontend contractor who plugs into your team in days. React, Next.js, Vue and TypeScript, 10+ years of experience, clients kept me for up to six years. EU timezone, remote.",
+      "Senior frontend contractor who plugs into your team in days. React, Next.js, Vue, TypeScript. 10+ years, clients kept me up to six years. EU timezone, remote.",
     keywords: ["senior frontend contractor", "frontend contractor Europe", "React contractor", "freelance frontend developer senior", "contract frontend developer remote"],
     headline: ["Senior frontend capacity", "without the three-month hire."],
     sub: "When your team is stretched and hiring is slow, I join as a senior contractor: read the codebase, pick up tickets in the first week, review code and ship features. No ramp-up theatre. I have done this inside a large accounting SaaS for six years and inside a pharma company for three.",
@@ -363,9 +365,9 @@ export const landingPages: LandingPage[] = [
     slug: "freelance-vue-nuxt-developer",
     label: "Vue / Nuxt developer",
     intent: "Freelance Vue and Nuxt developer",
-    title: "Freelance Vue & Nuxt Developer | Senior, TypeScript",
+    title: "Freelance Vue & Nuxt Developer | Senior",
     description:
-      "Senior freelance Vue and Nuxt developer. Vue 3, Composition API, Nuxt, TypeScript and Node.js for product companies that need features shipped and a codebase that stays maintainable.",
+      "Senior freelance Vue and Nuxt developer. Vue 3, Composition API, Nuxt, TypeScript and Node.js for product companies that need features shipped, code kept clean.",
     keywords: ["freelance Vue developer", "Nuxt developer for hire", "Vue.js contractor", "senior Vue developer Europe", "Vue TypeScript freelancer"],
     headline: ["A Vue and Nuxt developer", "who ships and sticks around."],
     sub: "Vue is the other half of my frontend work. I build and maintain Vue 3 and Nuxt applications with TypeScript, the Composition API and Node.js backends, for companies that chose Vue for good reasons and want a senior developer who respects that choice instead of pushing a rewrite.",
@@ -420,9 +422,9 @@ export const landingPages: LandingPage[] = [
     slug: "legacy-frontend-modernisation",
     label: "Modernisation & rescue",
     intent: "Legacy frontend modernisation",
-    title: "Legacy Frontend Modernisation & Rescue | Freelance",
+    title: "Legacy Frontend Modernisation & Rescue",
     description:
-      "Inherited a codebase nobody wants to touch? I modernise legacy React, Vue and JavaScript frontends, fix performance problems and get releases flowing again, incrementally and with a plan.",
+      "Inherited a codebase nobody wants to touch? I modernise legacy React, Vue and JavaScript frontends, fix performance and get releases flowing again, with a plan.",
     keywords: ["legacy frontend modernisation", "codebase rescue developer", "upgrade legacy React app", "frontend migration freelance", "fix slow web app"],
     headline: ["Inherited a codebase", "nobody wants to touch?"],
     sub: "Releases have stopped, the site is slow, the last developer left and the dependencies are years behind. I take over stalled and legacy frontends, stabilise them, and move them forward in steps you can ship, with a written plan and no drama. I did exactly this for a building physics company, keeping their proven calculation engine and putting a modern web UI on top.",
@@ -480,9 +482,9 @@ export const landingPages: LandingPage[] = [
     slug: "api-development-integrations",
     label: "APIs & integrations",
     intent: "API and integrations developer",
-    title: "API Development & Integrations | Node.js, TypeScript",
+    title: "API Development & Integrations | Node.js",
     description:
-      "Freelance Node.js developer for REST APIs, database design and third-party integrations: payments, accounting, authentication and more. The plumbing that makes your product work.",
+      "Freelance Node.js developer for REST APIs, database design and integrations: payments, accounting, authentication. The plumbing that makes your product work.",
     keywords: ["API developer freelance", "Node.js API development", "third-party integration developer", "payment integration developer", "REST API contractor"],
     headline: ["APIs and integrations", "that make the product actually work."],
     sub: "Behind every web and mobile product is a layer of APIs, databases and integrations that nobody sees until it breaks. I design and build that layer in Node.js and TypeScript: REST APIs, SQL schemas, authentication, payments, accounting and the third-party services your product depends on.",
@@ -537,9 +539,9 @@ export const landingPages: LandingPage[] = [
     slug: "mvp-development",
     label: "MVP development",
     intent: "MVP development for startups",
-    title: "MVP Development for Startups | Senior Freelancer",
+    title: "MVP Development for Startups | Freelance",
     description:
-      "Get your MVP built by a senior freelance developer instead of an agency. Next.js, Expo, Node.js and TypeScript. Working software early, weekly updates, and someone who stays after launch.",
+      "Get your MVP built by a senior freelance developer, not an agency. Next.js, Expo, Node.js, TypeScript. Working software early, weekly updates, then support.",
     keywords: ["MVP development freelance", "build my MVP", "startup developer for hire", "MVP developer Next.js", "technical co-founder alternative"],
     headline: ["An MVP built by a senior developer,", "not an agency's juniors."],
     sub: "Founders come to me when they need a product in the market without hiring a team or paying agency overhead. I scope with you, build in short iterations, and put working software in front of users early so we can change course before it gets expensive. I also build my own products, so I know what it is like to be on your side of the table.",
@@ -597,9 +599,9 @@ export const landingPages: LandingPage[] = [
     slug: "freelance-web-developer-denmark",
     label: "Freelance developer in Denmark",
     intent: "Freelance web developer, Denmark",
-    title: "Freelance Web Developer in Denmark | Per Hansen",
+    title: "Freelance Web Developer in Denmark",
     description:
-      "Senior freelance web and mobile developer based in Denmark. React, Next.js, Vue, Expo and Node.js for Danish and Nordic companies. Danish CVR invoicing, native Danish, fluent English.",
+      "Senior freelance web and mobile developer in Denmark. React, Next.js, Vue, Expo, Node.js for Danish and Nordic companies. Danish CVR invoicing, native Danish.",
     keywords: ["freelance web developer Denmark", "freelance udvikler", "freelance developer Copenhagen", "Next.js developer Denmark", "React developer Danmark"],
     headline: ["A senior freelance developer", "based in Denmark."],
     sub: "I am Per Hansen, a full-stack web and mobile developer working from Denmark for Danish, Nordic and international companies. Danish company and CVR number, invoices in DKK or EUR, native Danish and fluent English. Most of my longest clients, including Visma Dinero, Målbar and Storebuddy, are Danish product companies.",

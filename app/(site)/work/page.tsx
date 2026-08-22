@@ -5,16 +5,16 @@ import { Ledger } from "../../_components/ledger";
 import { caseSlug, caseWork, orderedCases } from "../../_data/cases";
 import { mailto, products, site } from "../../_data/site";
 
-const title = `Work | Case studies from fintech, climate tech, biotech and SaaS | ${site.name}`;
+const title = `Case Studies | Fintech, climate tech, biotech | ${site.name}`;
 const description =
-  "Case studies from a senior freelance developer: Målbar (LCA), Visma Dinero (accounting SaaS), Y-mAbs (pharma), Storebuddy (e-commerce bookkeeping), Bunch Bygningsfysik and eManager. What was built, how, and how long each client kept me.";
+  "Case studies from a senior freelance developer: Målbar, Visma Dinero, Y-mAbs, Storebuddy, Bunch Bygningsfysik, eManager. What I built and how long each kept me.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/work" },
   openGraph: { type: "website", url: "/work", title, description, siteName: site.name, locale: "en_US" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function WorkIndex() {

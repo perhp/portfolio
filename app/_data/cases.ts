@@ -32,14 +32,16 @@ export interface CaseStudy {
   services: string[];
   /** Placeholder until testimonials are collected (open task in product-marketing.md). */
   quote?: { text: string; name: string; role: string };
+  /** ISO date the page content last changed; falls back to contentUpdated in site.ts. */
+  updated?: string;
 }
 
 export const cases: CaseStudy[] = [
   {
     client: "Målbar",
-    title: "Målbar case study | LCA screening tool and internal tooling",
+    title: "Målbar case study | LCA screening tool",
     description:
-      "How I have spent two years and counting as the ongoing full-stack developer for Målbar, a Danish LCA company: building their climate footprint screening tool and the internal tools the team runs on.",
+      "Two years and counting as the ongoing full-stack developer for Målbar, a Danish LCA company: their climate footprint screening tool and internal tooling.",
     keywords: ["Målbar developer", "LCA screening tool", "climate tech case study", "Next.js LCA software", "freelance developer climate tech"],
     tagline: "Two years and counting as the ongoing developer behind an LCA screening tool.",
     context:
@@ -62,9 +64,9 @@ export const cases: CaseStudy[] = [
   },
   {
     client: "Bunch Bygningsfysik",
-    title: "Bunch Bygningsfysik case study | Five years on a building physics calculator",
+    title: "Bunch Bygningsfysik case study | Web calculator",
     description:
-      "Since 2021 I have built and kept developing a moisture content calculator for construction compositions for Bunch Bygningsfysik, keeping their proven calculation engine and putting a modern web UI on top.",
+      "Since 2021 I have built and kept developing a moisture calculator for construction compositions for Bunch Bygningsfysik, a modern web UI on their proven engine.",
     keywords: ["Bunch Bygningsfysik", "moisture calculator web app", "building physics software", "web UI on legacy calculation engine", "construction tech case study"],
     tagline: "Five years and counting on a web UI for a proven building physics engine.",
     context:
@@ -88,9 +90,9 @@ export const cases: CaseStudy[] = [
   },
   {
     client: "Visma Dinero",
-    title: "Visma Dinero case study | Six years on an accounting SaaS frontend",
+    title: "Visma Dinero case study | Accounting SaaS",
     description:
-      "Six years of frontend development on Dinero, one of Denmark's most popular accounting platforms: four as an employee, then brought back as a freelancer for two more. Shipping in a large, mature fintech codebase.",
+      "Six years of frontend development on Dinero, one of Denmark's most popular accounting platforms: four as an employee, then two more as a freelancer.",
     keywords: ["Visma Dinero developer", "accounting SaaS frontend", "fintech frontend developer Denmark", "Dinero frontend", "fintech case study"],
     tagline: "Four years as an employee, then brought back as a freelancer for two more.",
     context:
@@ -113,9 +115,9 @@ export const cases: CaseStudy[] = [
   },
   {
     client: "Y-mAbs Therapeutics",
-    title: "Y-mAbs Therapeutics case study | Web solutions in a regulated pharma environment",
+    title: "Y-mAbs case study | Web apps, regulated pharma",
     description:
-      "Three years of full-stack development of web solutions for Y-mAbs Therapeutics, a commercial-stage biopharmaceutical company, where reliability, correctness and clear documentation are not optional.",
+      "Three years of full-stack web development for Y-mAbs Therapeutics, a commercial-stage biopharma company where reliability and documentation are not optional.",
     keywords: ["Y-mAbs developer", "pharma web developer", "regulated environment software", "biotech full-stack developer", "pharma case study"],
     tagline: "Three years of full-stack web development where documentation is part of the deliverable.",
     context:
@@ -138,9 +140,9 @@ export const cases: CaseStudy[] = [
   },
   {
     client: "Storebuddy",
-    title: "Storebuddy case study | Bookkeeping automation frontend for webshops",
+    title: "Storebuddy case study | Bookkeeping automation",
     description:
-      "A year building the frontend for Storebuddy, a platform that automates bookkeeping for webshop owners and flags imbalances on orders, turning messy e-commerce data into something an accountant can trust.",
+      "A year building the frontend for Storebuddy, a platform that automates bookkeeping for webshop owners and flags imbalances on orders. Messy data made trusted.",
     keywords: ["Storebuddy developer", "bookkeeping automation frontend", "e-commerce fintech developer", "webshop bookkeeping software", "e-commerce case study"],
     tagline: "Turning messy webshop order data into bookkeeping an accountant can trust.",
     context:
@@ -163,9 +165,9 @@ export const cases: CaseStudy[] = [
   },
   {
     client: "eManager",
-    title: "eManager case study | Co-building an esports platform as a partner",
+    title: "eManager case study | Esports platform partner",
     description:
-      "Two years as full-stack developer and partner at eManager, co-building an esports tournament platform with a fantasy manager game from the ground up: product decisions, architecture and code.",
+      "Two years as full-stack developer and partner at eManager, co-building an esports tournament platform and fantasy manager game: product, architecture, code.",
     keywords: ["eManager esports platform", "esports tournament platform developer", "fantasy manager game developer", "startup technical partner", "built from scratch case study"],
     tagline: "From zero to a live esports platform, as a partner rather than a contractor.",
     context:

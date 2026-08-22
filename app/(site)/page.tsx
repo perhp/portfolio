@@ -6,11 +6,19 @@ import { landingPages } from "../_data/landing";
 import { Section } from "../_components/section";
 import { Ledger } from "../_components/ledger";
 import { Signature } from "../_components/signature";
+import { jsonLdGraph, personJsonLd, professionalServiceJsonLd } from "../_data/schema";
 import { about, contact, mailto, process, products, reasons, services, site, slug, stack, work } from "../_data/site";
+
+const jsonLd = jsonLdGraph(
+  { ...professionalServiceJsonLd, mainEntityOfPage: site.url },
+  personJsonLd,
+  { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, publisher: { "@id": personJsonLd["@id"] }, inLanguage: "en" },
+);
 
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero />
 
       <Section

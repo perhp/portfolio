@@ -4,16 +4,16 @@ import Link from "next/link";
 import { industries } from "../../_data/industries";
 import { mailto, site } from "../../_data/site";
 
-const title = `Industries | Fintech, climate tech, biotech, SaaS | ${site.name}`;
+const title = `Industries | Fintech, climate tech, biotech | ${site.name}`;
 const description =
-  "Senior freelance developer with years of experience in fintech and accounting, climate tech and LCA, biotech and pharma, SaaS, e-commerce and construction tech. Sector pages with proof.";
+  "Senior freelance developer with years in fintech and accounting, climate tech and LCA, biotech and pharma, SaaS, e-commerce and construction tech. With proof.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/industries" },
   openGraph: { type: "website", url: "/industries", title, description, siteName: site.name, locale: "en_US" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function IndustriesIndex() {

@@ -6,14 +6,14 @@ import { mailto, site } from "../../_data/site";
 
 const title = `Services | Freelance web & mobile development | ${site.name}`;
 const description =
-  "Freelance web and mobile development services from a senior developer in Denmark: Next.js, React, Vue, Expo and React Native apps, senior team capacity, APIs and legacy modernisation.";
+  "Freelance web and mobile development from a senior developer in Denmark: Next.js, React, Vue and Expo apps, senior team capacity, APIs and legacy modernisation.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/services" },
   openGraph: { type: "website", url: "/services", title, description, siteName: site.name, locale: "en_US" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function ServicesIndex() {

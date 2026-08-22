@@ -1,6 +1,7 @@
 import { ArrowRightIcon, ArrowUpRightIcon, CheckIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import type { LandingPage } from "../_data/landing";
+import { personJsonLd } from "../_data/schema";
 import { mailto, process, site, slug as slugify, type WorkItem } from "../_data/site";
 import { BriefForm } from "./brief-form";
 import { Section } from "./section";
@@ -47,17 +48,7 @@ export function LandingTemplate({ page, basePath, indexLabel, proof, related, cr
       url: pageUrl,
       areaServed: ["Denmark", "Europe", "United Kingdom", "United States"],
       availableChannel: { "@type": "ServiceChannel", serviceUrl: pageUrl, availableLanguage: ["en", "da"] },
-      provider: {
-        "@type": "Person",
-        "@id": `${site.url}/#person`,
-        name: site.name,
-        jobTitle: site.role,
-        url: site.url,
-        email: site.email,
-        sameAs: [site.social.linkedin, site.social.github],
-        worksFor: { "@type": "Organization", name: site.company.name, vatID: site.company.cvr },
-        address: { "@type": "PostalAddress", addressCountry: "DK" },
-      },
+      provider: personJsonLd,
     },
     {
       "@context": "https://schema.org",
@@ -336,7 +327,7 @@ export function landingMetadata(page: LandingPage, basePath: string) {
     keywords: [...page.keywords],
     alternates: { canonical: url },
     openGraph: { type: "website" as const, url, title, description: page.description, siteName: site.name, locale: "en_US" },
-    twitter: { card: "summary" as const, title, description: page.description },
+    twitter: { card: "summary_large_image" as const, title, description: page.description },
     robots: { index: true, follow: true },
   };
 }
